@@ -476,3 +476,50 @@ a:hover, .link:hover {
   --tw-gradient-from: var(--color-accent);
   --tw-gradient-to: var(--color-accent2);
 }
+
+.text-primary {
+  color: var(--color-foreground) !important;
+}
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+.text-muted {
+  color: var(--color-muted) !important;
+}
+.text-accent {
+  color: var(--color-accent) !important;
+}
+.text-accent2 {
+  color: var(--color-accent2) !important;
+}
+.text-highlight {
+  color: var(--color-highlight) !important;
+}
+.text-white {
+  color: #fff !important;
+}
+.text-black {
+  color: #000 !important;
+}
+
+.bg-primary {
+  background-color: var(--color-background) !important;
+}
+.bg-surface {
+  background-color: var(--color-surface) !important;
+}
+.bg-header {
+  background-color: var(--color-header) !important;
+}
+.bg-card {
+  background-color: var(--color-card) !important;
+}
+.bg-accent {
+  background-color: var(--color-accent) !important;
+}
+.bg-accent2 {
+  background-color: var(--color-accent2) !important;
+}
+.bg-highlight {
+  background-color: var(--color-highlight) !important;
+}

@@ -127,10 +127,10 @@ const Resume = () => {
     <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-primary to-muted bg-clip-text text-transparent">
           Experience That Delivers Results
         </h2>
-        <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
           From Amazon to academia, I've delivered results that matter—backed by data, driven by curiosity.
         </p>
       </div>
