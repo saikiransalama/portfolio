@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, MapPin, Mail, Github, Linkedin, Download, TrendingUp, BarChart3, Database, Zap, ArrowRight, Play } from 'lucide-react';
+import { ChevronDown, MapPin, Mail, Github, Linkedin, Download, TrendingUp, BarChart3, Database, Zap, ArrowRight, Play, Star } from 'lucide-react';
 import backgroundImage from '../assests/Background.jpg';
 
 const Hero = () => {
@@ -29,10 +29,10 @@ const Hero = () => {
   };
 
   const stats = [
-    { number: "4+", label: "Years Experience", icon: TrendingUp },
-    { number: "15+", label: "Projects Completed", icon: BarChart3 },
-    { number: "95%", label: "Client Satisfaction", icon: Zap },
-    { number: "6", label: "Programming Languages", icon: Database }
+    { number: "2+", label: "Years Experience", icon: TrendingUp },
+    { number: "8+", label: "Academic/Industry Projects", icon: BarChart3 },
+    { number: "3.9/4.0", label: "Master's CGPA", icon: Star },
+    { number: "4", label: "Programming Languages", icon: Database }
   ];
 
   return (
@@ -95,15 +95,15 @@ const Hero = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-surface)] backdrop-blur-md rounded-2xl" style={{ border: '2px solid #000' }}>
-                <div className="flex items-center justify-center mb-2">
+                <div className="flex items-center justify-center mb-2 md:mb-4">
                   <div className="p-2 bg-black rounded-xl transition-all duration-300">
                     <stat.icon className="h-5 w-5 text-white transition-colors" />
                   </div>
                 </div>
-                <div className="text-xl font-bold text-[var(--color-accent)] mb-1">
+                <div className="text-2xl md:text-4xl font-bold text-black mb-1 md:mb-2 flex justify-center items-center">
                   {stat.number}
                 </div>
-                <div className="text-xs text-[var(--color-secondary)] font-medium">
+                <div className="text-xs md:text-sm text-[var(--color-secondary)] font-medium text-center">
                   {stat.label}
                 </div>
               </div>
