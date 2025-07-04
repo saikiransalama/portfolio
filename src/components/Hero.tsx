@@ -82,10 +82,10 @@ const Hero = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-surface)] backdrop-blur-md rounded-2xl">
+              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-surface)] backdrop-blur-md rounded-2xl" style={{ border: '2px solid #000' }}>
                 <div className="flex items-center justify-center mb-2">
-                  <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl group-hover:scale-110 transition-transform">
-                    <stat.icon className="h-5 w-5 text-white" />
+                  <div className="p-2 bg-[var(--color-button-primary-fill)] rounded-xl group-hover:bg-[var(--color-button-primary-hover-fill)] group-hover:text-[var(--color-button-primary-hover-text)] transition-all duration-300">
+                    <stat.icon className="h-5 w-5 text-white group-hover:text-[var(--color-button-primary-hover-text)] transition-colors" />
                   </div>
                 </div>
                 <div className="text-xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent mb-1">
