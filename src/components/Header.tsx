@@ -63,9 +63,8 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-gray-900 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img src="/logo-white.svg" alt="Logo" className="h-8 w-8 drop-shadow-lg" />
-          <span className="font-bold text-lg text-white">Saikiran Salama</span>
+        <div className="flex items-center">
+          <span className="font-bold text-white text-lg md:text-xl">Portfolio</span>
         </div>
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
