@@ -147,7 +147,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📞 Contact
 
-- **Email**: saikiran.salama@my.unt.edu
+- **Email**: salamasaikiran@gmail.com
 - **LinkedIn**: [Saikiran Salama](https://www.linkedin.com/in/saikiran-salama/)
 - **GitHub**: [@saikiransalama](https://github.com/saikiransalama)
 
