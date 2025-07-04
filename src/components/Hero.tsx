@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, MapPin, Mail, Github, Linkedin, Download, TrendingUp, BarChart3, Database, Zap, ArrowRight, Play } from 'lucide-react';
+import backgroundImage from '../assests/Background.jpg';
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -36,9 +37,22 @@ const Hero = () => {
 
   return (
     <div className="relative py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-[var(--color-background)]/80"></div>
+      </div>
+
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-[var(--color-background)]"></div>
         <div className="absolute top-20 left-20 w-72 h-72 bg-[var(--color-accent)]/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-[var(--color-accent2)]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[var(--color-accent)]/10 rounded-full blur-3xl animate-pulse delay-500"></div>
@@ -53,30 +67,28 @@ const Hero = () => {
           
           {/* Badge */}
           <div className="flex justify-center mb-6 animate-fade-in">
-            <div className="flex items-center px-6 py-3 bg-[var(--color-accent)] rounded-full shadow-lg text-white text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
-              <span className="w-4 h-4 bg-[var(--color-accent2)] rounded-full mr-3 animate-pulse border-2 border-white shadow" />
-              <span className="drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Open to Game-Changing Roles</span>
+            <div className="flex items-center px-6 py-3 bg-[var(--color-surface)] rounded-full shadow-lg text-black text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
+              <span className="w-4 h-4 bg-[var(--color-highlight)] rounded-full mr-3 animate-pulse border-2 border-white shadow" />
+              <span className="drop-shadow-lg font-bold" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Open to Game-Changing Roles</span>
             </div>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 leading-tight text-primary">
-            <span className="bg-gradient-to-r from-primary via-accent to-accent2 bg-clip-text text-transparent">
-              Saikiran Salama: Turning Data Into Opportunity
-            </span>
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 leading-tight text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
+            Saikiran Salama: Turning Data Into Opportunity
           </h1>
 
           {/* Animated Subtitle */}
-          <div className="text-xl md:text-2xl font-semibold mb-6 h-10 flex items-center justify-center text-secondary">
+          <div className="text-xl md:text-2xl font-semibold mb-6 h-10 flex items-center justify-center text-[var(--color-foreground)]">
             <span className="mr-2">I turn raw data into:</span>
-            <span className="bg-gradient-to-r from-accent to-accent2 bg-clip-text text-transparent min-w-[180px]">
+            <span className="min-w-[180px] font-bold text-[var(--color-foreground)]">
               {['Breakthrough Insights','Business Wins','Predictive Power','Smart Decisions'][currentText]}
             </span>
           </div>
 
           {/* Description */}
-          <p className="text-base md:text-lg text-secondary mb-6 max-w-2xl mx-auto leading-relaxed">
-            Data Analytics trailblazer (<span className="font-bold text-highlight">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-accent">Python</span>, <span className="font-semibold text-accent2">SQL</span>, and <span className="font-semibold text-highlight">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
+          <p className="text-base md:text-lg text-[var(--color-foreground)] mb-6 max-w-2xl mx-auto leading-relaxed">
+            Data Analytics trailblazer (<span className="font-bold text-[var(--color-foreground)]">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-[var(--color-foreground)]">Python</span>, <span className="font-semibold text-[var(--color-foreground)]">SQL</span>, and <span className="font-semibold text-[var(--color-foreground)]">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
           </p>
 
           {/* Stats Grid */}
@@ -84,11 +96,11 @@ const Hero = () => {
             {stats.map((stat, index) => (
               <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-surface)] backdrop-blur-md rounded-2xl" style={{ border: '2px solid #000' }}>
                 <div className="flex items-center justify-center mb-2">
-                  <div className="p-2 bg-[var(--color-button-primary-fill)] rounded-xl group-hover:bg-[var(--color-button-primary-hover-fill)] group-hover:text-[var(--color-button-primary-hover-text)] transition-all duration-300">
-                    <stat.icon className="h-5 w-5 text-white group-hover:text-[var(--color-button-primary-hover-text)] transition-colors" />
+                  <div className="p-2 bg-black rounded-xl transition-all duration-300">
+                    <stat.icon className="h-5 w-5 text-white transition-colors" />
                   </div>
                 </div>
-                <div className="text-xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent mb-1">
+                <div className="text-xl font-bold text-[var(--color-accent)] mb-1">
                   {stat.number}
                 </div>
                 <div className="text-xs text-[var(--color-secondary)] font-medium">

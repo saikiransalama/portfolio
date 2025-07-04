@@ -29,10 +29,10 @@ const About = () => {
     <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-primary to-muted bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
           Meet Your Next Data Partner
         </h2>
-        <p className="text-base md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-[var(--color-secondary)] max-w-2xl mx-auto leading-relaxed">
           I'm a data storyteller with a Master's in Advanced Data Analytics, published research, and a passion for turning numbers into narratives that drive action.
         </p>
       </div>
@@ -48,7 +48,7 @@ const About = () => {
             <div className={`text-lg md:text-3xl font-bold ${achievement.color} mb-1 md:mb-2`}>
               {achievement.number}
             </div>
-            <div className="text-xs md:text-sm text-[var(--color-muted)] font-medium text-center">
+            <div className="text-xs md:text-sm text-[var(--color-secondary)] font-medium text-center">
               {achievement.label}
             </div>
           </div>
@@ -69,7 +69,7 @@ const About = () => {
               className={`flex-1 flex items-center justify-center py-3 md:py-4 px-2 md:px-4 font-semibold transition-all duration-300 text-xs md:text-base ${
                 activeTab === tab.id
                   ? 'bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] text-white'
-                  : 'text-[var(--color-muted)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background)]/60'
+                  : 'text-[var(--color-secondary)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background)]/60'
               }`}
               style={{ minHeight: 44 }}
             >
@@ -84,11 +84,11 @@ const About = () => {
             <div className="space-y-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">My Journey in Data Analytics</h3>
-                  <p className="text-muted mb-4 leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-[var(--color-foreground)]">My Journey in Data Analytics</h3>
+                  <p className="text-[var(--color-secondary)] mb-4 leading-relaxed">
                     From coding in college to publishing research that matters, my journey is all about using data to solve real problems. At Amazon, I didn't just analyze numbers—I made them work for people.
                   </p>
-                  <p className="text-muted mb-6 leading-relaxed">
+                  <p className="text-[var(--color-secondary)] mb-6 leading-relaxed">
                     I specialize in advanced analytics and machine learning, with published research on COVID-19 enrollment analysis. My experience at Amazon as a Flex Payment Investigator & SME has honed my analytical skills and business acumen.
                   </p>
                   <div className="flex items-center text-[var(--color-accent)] font-semibold group cursor-pointer">
@@ -147,7 +147,7 @@ const About = () => {
 
           {activeTab === 'values' && (
             <div className="space-y-8">
-              <h3 className="text-2xl font-bold mb-6 text-primary">My Core Values</h3>
+              <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)]">My Core Values</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 {values.map((value, index) => (
                   <div key={index} className="bg-[var(--color-card)] rounded-2xl p-6 hover:bg-[var(--color-background)]/60 transition-colors">
@@ -156,8 +156,8 @@ const About = () => {
                         <value.icon className="h-6 w-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold text-primary mb-2">{value.title}</h4>
-                        <p className="text-muted leading-relaxed">{value.description}</p>
+                        <h4 className="text-lg font-semibold text-[var(--color-foreground)] mb-2">{value.title}</h4>
+                        <p className="text-[var(--color-secondary)] leading-relaxed">{value.description}</p>
                       </div>
                     </div>
                   </div>

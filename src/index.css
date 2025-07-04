@@ -523,3 +523,8 @@ a:hover, .link:hover {
 .bg-highlight {
   background-color: var(--color-highlight) !important;
 }
+
+/* Ensure header nav links stay black on hover */
+header nav a:hover {
+  color: var(--color-foreground) !important;
+}

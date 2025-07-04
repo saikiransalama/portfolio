@@ -64,7 +64,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="font-bold text-[var(--color-foreground)] text-lg md:text-xl">Portfolio</span>
+          <span className="font-bold text-[var(--color-foreground)] text-lg md:text-xl">Saikiran R. Salama</span>
         </div>
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center space-x-2 lg:space-x-4">
@@ -72,7 +72,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`px-3 py-1.5 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-accent)] text-white' : 'text-[var(--color-foreground)] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)]'}`}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-surface)] text-[var(--color-foreground)] font-bold' : 'text-[var(--color-foreground)] hover:bg-[var(--color-surface)]/80 hover:text-[var(--color-foreground)]'}`}
             >
               {item.name}
             </a>
@@ -81,7 +81,7 @@ const Header = () => {
         {/* Theme Toggle & Mobile Menu */}
         <div className="flex items-center space-x-2">
           <button
-            className="md:hidden p-2 rounded-lg text-[var(--color-foreground)] hover:bg-[var(--color-accent)]/10 focus:outline-none"
+            className="md:hidden p-2 rounded-lg text-[var(--color-foreground)] hover:bg-[var(--color-surface)]/80 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Open menu"
           >
@@ -96,7 +96,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`block px-3 py-2 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-accent)] text-white' : 'text-[var(--color-foreground)] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)]'}`}
+              className={`block px-3 py-2 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-surface)] text-[var(--color-foreground)] font-bold' : 'text-[var(--color-foreground)] hover:bg-[var(--color-surface)]/80 hover:text-[var(--color-foreground)]'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
