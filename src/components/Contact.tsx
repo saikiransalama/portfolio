@@ -109,35 +109,36 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-20">
+    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
           Let's Work Together
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
           I'm always excited to discuss research opportunities, collaborate on data analysis projects, or connect with fellow analytics professionals.
         </p>
       </div>
 
       {/* Contact Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
         {contactInfo.map((info, index) => (
           <a
             key={index}
             href={info.action}
-            className="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+            className="card group p-4 md:p-6"
+            style={{ minHeight: 44 }}
           >
-            <div className="flex items-center mb-4">
-              <div className="p-3 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl mr-4 group-hover:scale-110 transition-transform">
-                <info.icon className="h-6 w-6 text-blue-600" />
+            <div className="flex items-center mb-2 md:mb-4">
+              <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl mr-2 md:mr-4 group-hover:scale-110 transition-transform">
+                <info.icon className="h-5 w-5 md:h-6 md:w-6 text-white" />
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">{info.title}</h3>
-                <p className="text-sm text-gray-600">{info.description}</p>
+                <h3 className="font-semibold text-[var(--color-foreground)] text-sm md:text-base">{info.title}</h3>
+                <p className="text-xs md:text-sm text-[var(--color-muted)]">{info.description}</p>
               </div>
             </div>
-            <div className="text-lg font-semibold text-blue-600 group-hover:text-blue-700 transition-colors">
+            <div className="text-base md:text-lg font-semibold text-[var(--color-accent)] group-hover:text-[var(--color-accent2)] transition-colors">
               {info.value}
             </div>
           </a>
@@ -294,26 +295,26 @@ const Contact = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h3>
+          <div className="card">
+            <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-6">Quick Actions</h3>
             <div className="space-y-4">
               {quickActions.map((action, index) => (
                 <a
                   key={index}
                   href={action.action}
-                  className="group block p-4 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all duration-300"
+                  className="group block p-4 bg-[var(--color-card)] rounded-2xl hover:bg-[var(--color-background)]/60 transition-all duration-300"
                 >
                   <div className="flex items-center">
-                    <div className={`p-3 bg-gradient-to-r ${action.color} rounded-xl mr-4 group-hover:scale-110 transition-transform`}>
+                    <div className={`p-3 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl mr-4 group-hover:scale-110 transition-transform`}>
                       <action.icon className="h-6 w-6 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                      <h4 className="font-semibold text-[var(--color-foreground)] group-hover:text-[var(--color-accent)] transition-colors">
                         {action.title}
                       </h4>
-                      <p className="text-sm text-gray-600">{action.description}</p>
+                      <p className="text-sm text-[var(--color-muted)]">{action.description}</p>
                     </div>
-                    <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight className="h-5 w-5 text-[var(--color-border)] group-hover:text-[var(--color-accent)] group-hover:translate-x-1 transition-all duration-300" />
                   </div>
                 </a>
               ))}
@@ -321,14 +322,14 @@ const Contact = () => {
           </div>
 
           {/* Social Links */}
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Connect With Me</h3>
+          <div className="card mt-8">
+            <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-6">Connect With Me</h3>
             <div className="flex space-x-4">
               <a
                 href="https://linkedin.com/in/alexchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center p-4 bg-blue-600 text-white rounded-2xl hover:bg-blue-700 transition-colors group"
+                className="flex-1 flex items-center justify-center p-4 bg-[var(--color-accent)] text-white rounded-2xl hover:bg-[var(--color-accent2)] transition-colors group"
               >
                 <Linkedin className="h-5 w-5 mr-2" />
                 <span className="font-semibold">LinkedIn</span>
@@ -337,7 +338,7 @@ const Contact = () => {
                 href="https://github.com/alexchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center p-4 bg-gray-900 text-white rounded-2xl hover:bg-gray-800 transition-colors group"
+                className="flex-1 flex items-center justify-center p-4 bg-[var(--color-foreground)] text-white rounded-2xl hover:bg-[var(--color-accent)] transition-colors group"
               >
                 <Github className="h-5 w-5 mr-2" />
                 <span className="font-semibold">GitHub</span>
@@ -346,7 +347,7 @@ const Contact = () => {
                 href="https://twitter.com/alexchen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 flex items-center justify-center p-4 bg-blue-400 text-white rounded-2xl hover:bg-blue-500 transition-colors group"
+                className="flex-1 flex items-center justify-center p-4 bg-[var(--color-accent2)] text-white rounded-2xl hover:bg-[var(--color-accent)] transition-colors group"
               >
                 <Twitter className="h-5 w-5 mr-2" />
                 <span className="font-semibold">Twitter</span>

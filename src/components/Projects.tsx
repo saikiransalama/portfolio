@@ -79,55 +79,48 @@ const Projects = () => {
   const categories = ["All", "Research", "Machine Learning", "Data Analysis", "Statistical Analysis"];
 
   return (
-    <div className="py-20">
+    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
           Featured Projects
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
           Academic research projects and data analysis work showcasing advanced analytics skills and published research contributions.
         </p>
       </div>
-
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
+      <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8">
         {categories.map((category, index) => (
           <button
             key={index}
-            className="px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border-2 hover:scale-105"
-            style={{
-              backgroundColor: index === 0 ? 'rgb(59 130 246)' : 'transparent',
-              color: index === 0 ? 'white' : 'rgb(107 114 128)',
-              borderColor: index === 0 ? 'rgb(59 130 246)' : 'rgb(229 231 235)'
-            }}
+            className={`px-4 md:px-6 py-2 md:py-3 rounded-2xl font-semibold transition-all duration-300 border-2 text-xs md:text-base ${index === 0 ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)]' : 'bg-transparent text-[var(--color-muted)] border-[var(--color-border)] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)]'}`}
+            style={{ minHeight: 44 }}
           >
             {category}
           </button>
         ))}
       </div>
-
       {/* Featured Project Showcase */}
-      <div className="mb-16">
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
-          <div className="grid lg:grid-cols-2">
+      <div className="mb-6 md:mb-12">
+        <div className="card overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
             {/* Project Image */}
-            <div className="relative h-96 lg:h-full overflow-hidden">
+            <div className="relative h-48 md:h-96 lg:h-full overflow-hidden">
               <img
                 src={projects[activeProject].image}
                 alt={projects[activeProject].title}
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <span className="bg-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
+              <div className="absolute bottom-3 left-3 text-white">
+                <span className="bg-[var(--color-accent)] px-2 py-0.5 rounded-full text-xs font-semibold">
                   {projects[activeProject].category}
                 </span>
               </div>
             </div>
-
             {/* Project Details */}
-            <div className="p-8 lg:p-12">
+            <div className="p-4 md:p-8 lg:p-12">
               <div className="flex items-center gap-4 mb-4">
                 <Calendar className="h-5 w-5 text-gray-500" />
                 <span className="text-gray-600">{projects[activeProject].duration}</span>
@@ -187,93 +180,47 @@ const Projects = () => {
           </div>
         </div>
       </div>
-
-      {/* Project Navigation */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Project Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
         {projects.map((project, index) => (
           <div
             key={project.id}
-            className={`bg-white rounded-2xl p-6 shadow-lg border-2 cursor-pointer transition-all duration-300 hover:shadow-xl ${
-              activeProject === index ? 'border-blue-600' : 'border-gray-100 hover:border-blue-200'
-            }`}
+            className={`card cursor-pointer transition-all duration-300 hover:shadow-xl p-3 md:p-4 ${activeProject === index ? 'border-[var(--color-accent)]' : 'hover:border-[var(--color-accent)]'}`}
             onClick={() => setActiveProject(index)}
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
+            style={{ minHeight: 44 }}
           >
-            <div className="relative mb-4">
+            <div className="relative mb-2 md:mb-4">
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-32 object-cover rounded-xl"
+                className="w-full h-20 md:h-32 object-cover rounded-xl"
               />
-              <div className="absolute top-2 right-2">
-                <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-semibold">
+              <div className="absolute top-1 right-1 md:top-2 md:right-2">
+                <span className="bg-[var(--color-accent)] text-white px-1.5 py-0.5 rounded-full text-[10px] md:text-xs font-semibold">
                   {project.category}
                 </span>
               </div>
             </div>
-
-            <h4 className="font-bold text-gray-900 mb-2 line-clamp-2">
+            <h4 className="font-bold text-[var(--color-foreground)] mb-1 md:mb-2 line-clamp-2 text-sm md:text-base">
               {project.title}
             </h4>
-            
-            <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+            <p className="text-xs md:text-sm text-[var(--color-muted)] mb-2 md:mb-4 line-clamp-2">
               {project.subtitle}
             </p>
-
-            <div className="flex items-center justify-between">
-              <div className="flex items-center text-sm text-gray-500">
-                <Calendar className="h-4 w-4 mr-1" />
+            <div className="flex items-center justify-between text-xs md:text-sm">
+              <div className="flex items-center text-[var(--color-muted)]">
+                <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                 {project.duration}
               </div>
-              <div className="flex items-center text-sm text-gray-500">
-                <Users className="h-4 w-4 mr-1" />
+              <div className="flex items-center text-[var(--color-muted)]">
+                <Users className="h-3 w-3 md:h-4 md:w-4 mr-1" />
                 {project.team}
               </div>
             </div>
-
-            {/* Hover Effect */}
-            {hoveredProject === index && (
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-purple-600/90 rounded-2xl flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
-                <div className="text-white text-center">
-                  <Eye className="h-8 w-8 mx-auto mb-2" />
-                  <span className="text-sm font-semibold">View Details</span>
-                </div>
-              </div>
-            )}
           </div>
         ))}
-      </div>
-
-      {/* Call to Action */}
-      <div className="text-center mt-16">
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to see more of my work?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            I have additional case studies and projects that demonstrate my expertise in data analytics, 
-            machine learning, and business intelligence.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="https://github.com/alexchen"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center px-8 py-4 bg-gray-900 text-white rounded-2xl font-semibold hover:bg-gray-800 transition-colors"
-            >
-              <Github className="h-5 w-5 mr-2" />
-              View GitHub
-            </a>
-            <a
-              href="#contact"
-              className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              <ArrowRight className="h-5 w-5 mr-2" />
-              Let's Discuss Your Project
-            </a>
-          </div>
-        </div>
       </div>
     </div>
   );

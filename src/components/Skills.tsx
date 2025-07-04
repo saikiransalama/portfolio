@@ -98,35 +98,34 @@ const Skills = () => {
   };
 
   return (
-    <div className="py-20">
+    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
           Technical Skills
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
           A comprehensive toolkit of programming languages, tools, and methodologies that enable me to deliver impactful data solutions.
         </p>
       </div>
-
       {/* Skills Overview Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
         {[
           { number: "4", label: "Programming Languages", icon: Code },
           { number: "8", label: "Academic Projects", icon: Target },
           { number: "3+", label: "Years Experience", icon: TrendingUp },
           { number: "3.9/4.0", label: "Master's CGPA", icon: Star }
         ].map((stat, index) => (
-          <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
-            <div className="flex items-center justify-center mb-4">
-              <div className="p-3 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl group-hover:scale-110 transition-transform">
-                <stat.icon className="h-8 w-8 text-blue-600" />
+          <div key={index} className="card group p-4 md:p-6">
+            <div className="flex items-center justify-center mb-2 md:mb-4">
+              <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl group-hover:scale-110 transition-transform">
+                <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
               </div>
             </div>
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+            <div className="text-lg md:text-3xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent mb-1 md:mb-2">
               {stat.number}
             </div>
-            <div className="text-sm text-gray-600 font-medium text-center">
+            <div className="text-xs md:text-sm text-[var(--color-muted)] font-medium text-center">
               {stat.label}
             </div>
           </div>
@@ -164,34 +163,34 @@ const Skills = () => {
 
         <div className="space-y-6">
           {skills[activeCategory as keyof typeof skills]?.map((skill, index) => (
-            <div key={skill.name} className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
+            <div key={skill.name} className="bg-[var(--color-card)] rounded-2xl p-6 hover:bg-[var(--color-background)]/60 transition-colors">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center">
                   <span className="text-2xl mr-3">{skill.icon}</span>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900">{skill.name}</h4>
-                    <div className="flex items-center gap-4 text-sm text-gray-600">
+                    <h4 className="text-lg font-semibold text-[var(--color-foreground)]">{skill.name}</h4>
+                    <div className="flex items-center gap-4 text-sm text-[var(--color-muted)]">
                       <span className="flex items-center">
                         <CheckCircle className="h-4 w-4 mr-1 text-green-600" />
                         {skill.experience}
                       </span>
                       <span className="flex items-center">
-                        <Target className="h-4 w-4 mr-1 text-blue-600" />
+                        <Target className="h-4 w-4 mr-1 text-[var(--color-accent)]" />
                         {skill.projects} projects
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-lg font-bold text-gray-900">{skill.level}%</div>
-                  <div className="text-sm text-gray-600">{getLevelText(skill.level)}</div>
+                  <div className="text-lg font-bold text-[var(--color-foreground)]">{skill.level}%</div>
+                  <div className="text-sm text-[var(--color-muted)]">{getLevelText(skill.level)}</div>
                 </div>
               </div>
               
               <div className="relative">
-                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-[var(--color-border)] rounded-full h-3 overflow-hidden">
                   <div
-                    className={`h-3 rounded-full bg-gradient-to-r ${getLevelColor(skill.level)} transition-all duration-1000 ease-out ${
+                    className={`h-3 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] transition-all duration-1000 ease-out ${
                       animatedSkills[activeCategory] ? 'w-full' : 'w-0'
                     }`}
                     style={{ width: animatedSkills[activeCategory] ? `${skill.level}%` : '0%' }}
@@ -204,8 +203,8 @@ const Skills = () => {
       </div>
 
       {/* Certifications & Achievements */}
-      <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
-        <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+      <div className="mt-16 bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-3xl p-8">
+        <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-6 text-center">
           Certifications & Achievements
         </h3>
         <div className="grid md:grid-cols-3 gap-6">
@@ -229,10 +228,10 @@ const Skills = () => {
               icon: "📈"
             }
           ].map((cert, index) => (
-            <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
+            <div key={index} className="card">
               <div className="text-3xl mb-4">{cert.icon}</div>
-              <h4 className="font-semibold text-gray-900 mb-2">{cert.title}</h4>
-              <div className="text-sm text-gray-600">
+              <h4 className="font-semibold text-[var(--color-foreground)] mb-2">{cert.title}</h4>
+              <div className="text-sm text-[var(--color-muted)]">
                 <div>{cert.issuer}</div>
                 <div>{cert.year}</div>
               </div>
@@ -243,16 +242,16 @@ const Skills = () => {
 
       {/* Call to Action */}
       <div className="text-center mt-16">
-        <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
+        <div className="card">
+          <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-4">
             Ready to leverage these skills for your project?
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-[var(--color-muted)] mb-6 max-w-2xl mx-auto">
             I'm always excited to take on new challenges and apply my technical expertise to solve complex business problems.
           </p>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
+            className="inline-flex items-center px-8 py-4 bg-[var(--color-accent)] text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
           >
             <ArrowRight className="h-5 w-5 mr-2" />
             Let's Discuss Your Needs

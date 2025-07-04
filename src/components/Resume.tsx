@@ -124,35 +124,34 @@ const Resume = () => {
   ];
 
   return (
-    <div className="py-20">
+    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
           Resume & Experience
         </h2>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
           Academic excellence with published research and professional experience in data analysis and customer service optimization.
         </p>
       </div>
-
       {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
         {[
           { number: "2+", label: "Years Experience", icon: Briefcase },
           { number: "2", label: "Research Papers", icon: Users },
           { number: "3.9/4.0", label: "Master's CGPA", icon: TrendingUp },
           { number: "100%", label: "Training Pass Rate", icon: Star }
         ].map((stat, index) => (
-          <div key={index} className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
-            <div className="flex items-center justify-center mb-4">
-              <div className="p-3 bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl group-hover:scale-110 transition-transform">
-                <stat.icon className="h-8 w-8 text-blue-600" />
+          <div key={index} className="card group p-4 md:p-6">
+            <div className="flex items-center justify-center mb-2 md:mb-4">
+              <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl group-hover:scale-110 transition-transform">
+                <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-white" />
               </div>
             </div>
-            <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+            <div className="text-lg md:text-3xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent mb-1 md:mb-2">
               {stat.number}
             </div>
-            <div className="text-sm text-gray-600 font-medium text-center">
+            <div className="text-xs md:text-sm text-[var(--color-muted)] font-medium text-center">
               {stat.label}
             </div>
           </div>
@@ -182,92 +181,94 @@ const Resume = () => {
       </div>
 
       {/* Content */}
-      <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden w-full max-w-full">
         {activeTab === 'experience' && (
-          <div className="p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Professional Experience</h3>
+          <div className="p-4 sm:p-6 md:p-8 overflow-x-auto">
+            <h3 className="text-2xl font-bold text-gray-100 mb-8">Professional Experience</h3>
             <div className="space-y-8">
               {experience.map((job, index) => (
-                <div key={job.id} className="relative">
-                  {/* Timeline Line */}
-                  {index < experience.length - 1 && (
-                    <div className="absolute left-8 top-16 w-0.5 h-full bg-gradient-to-b from-blue-600 to-purple-600"></div>
-                  )}
-                  
-                  <div className="flex items-start">
-                    {/* Timeline Dot */}
-                    <div className="relative z-10 flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center mr-6">
-                      <Briefcase className="h-8 w-8 text-white" />
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-1">{job.title}</h4>
-                          <div className="flex items-center text-blue-600 font-semibold mb-2">
-                            {job.company}
-                          </div>
-                          <div className="flex items-center gap-4 text-sm text-gray-600">
-                            <span className="flex items-center">
-                              <MapPin className="h-4 w-4 mr-1" />
-                              {job.location}
-                            </span>
-                            <span className="flex items-center">
-                              <Calendar className="h-4 w-4 mr-1" />
-                              {job.period}
-                            </span>
-                            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">
-                              {job.type}
-                            </span>
-                          </div>
-                        </div>
-                        
-                        {/* Impact Metrics */}
-                        <div className="mt-4 md:mt-0">
-                          <div className="flex gap-2">
-                            {Object.entries(job.impact).map(([key, value]) => (
-                              <div key={key} className="bg-white rounded-xl px-3 py-2 text-center">
-                                <div className="text-sm font-bold text-green-600">{value}</div>
-                                <div className="text-xs text-gray-600 capitalize">{key}</div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Achievements */}
-                      <div className="mb-4">
-                        <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
-                          <Target className="h-4 w-4 mr-2 text-blue-600" />
-                          Key Achievements
-                        </h5>
-                        <ul className="space-y-2">
-                          {job.achievements.map((achievement, idx) => (
-                            <li key={idx} className="flex items-start">
-                              <CheckCircle className="h-4 w-4 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-700 text-sm leading-relaxed">{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Skills */}
+                <div key={job.id} className="flex items-start">
+                  {/* Timeline Icon/Line Column */}
+                  <div className="flex flex-col items-center w-8 flex-shrink-0">
+                    {/* Main timeline dot at the top */}
+                    {index === 0 ? (
+                      <span className="w-8 h-8 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white text-xl shadow-md z-10 mb-2">
+                        {/* Briefcase icon or filled circle */}
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M6 7V6a2 2 0 012-2h8a2 2 0 012 2v1" /><rect width="20" height="14" x="2" y="7" rx="2" /><path strokeLinecap="round" strokeLinejoin="round" d="M16 13a4 4 0 01-8 0" /></svg>
+                      </span>
+                    ) : (
+                      <span className="w-6 h-6 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white text-lg shadow-md z-10 mb-2">
+                        {/* Small dot for other items */}
+                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" /></svg>
+                      </span>
+                    )}
+                    {/* Vertical line */}
+                    <div className="flex-1 w-px bg-[var(--color-muted)]"></div>
+                  </div>
+                  {/* Content Column */}
+                  <div className="flex-1 pl-4 sm:pl-6">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
                       <div>
-                        <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
-                          <TrendingUp className="h-4 w-4 mr-2 text-blue-600" />
-                          Technologies & Skills
-                        </h5>
+                        <h4 className="text-xl font-bold text-gray-900 mb-1 break-words">{job.title}</h4>
+                        <div className="flex items-center text-blue-600 font-semibold mb-2 break-words">
+                          {job.company}
+                        </div>
+                        <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600">
+                          <span className="flex items-center">
+                            <MapPin className="h-4 w-4 mr-1" />
+                            {job.location}
+                          </span>
+                          <span className="flex items-center">
+                            <Calendar className="h-4 w-4 mr-1" />
+                            {job.period}
+                          </span>
+                          <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-semibold">
+                            {job.type}
+                          </span>
+                        </div>
+                      </div>
+                      {/* Impact Metrics */}
+                      <div className="mt-4 md:mt-0">
                         <div className="flex flex-wrap gap-2">
-                          {job.skills.map((skill, idx) => (
-                            <span
-                              key={idx}
-                              className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
-                            >
-                              {skill}
-                            </span>
+                          {Object.entries(job.impact).map(([key, value]) => (
+                            <div key={key} className="bg-white rounded-xl px-3 py-2 text-center min-w-[80px]">
+                              <div className="text-sm font-bold text-green-600 break-words">{value}</div>
+                              <div className="text-xs text-gray-600 capitalize break-words">{key}</div>
+                            </div>
                           ))}
                         </div>
+                      </div>
+                    </div>
+                    {/* Achievements */}
+                    <div className="mb-4">
+                      <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                        <Target className="h-4 w-4 mr-2 text-blue-600" />
+                        Key Achievements
+                      </h5>
+                      <ul className="space-y-2">
+                        {job.achievements.map((achievement, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <CheckCircle className="h-4 w-4 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-700 text-sm leading-relaxed break-words">{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {/* Skills */}
+                    <div>
+                      <h5 className="font-semibold text-gray-900 mb-3 flex items-center">
+                        <TrendingUp className="h-4 w-4 mr-2 text-blue-600" />
+                        Technologies & Skills
+                      </h5>
+                      <div className="flex flex-wrap gap-2">
+                        {job.skills.map((skill, idx) => (
+                          <span
+                            key={idx}
+                            className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium break-words"
+                          >
+                            {skill}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>

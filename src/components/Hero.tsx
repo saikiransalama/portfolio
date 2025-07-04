@@ -35,65 +35,62 @@ const Hero = () => {
   ];
 
   return (
-    <div className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-indigo-600/10"></div>
-        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[var(--color-background)]"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-[var(--color-accent)]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[var(--color-accent2)]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-[var(--color-accent)]/10 rounded-full blur-3xl animate-pulse delay-500"></div>
       </div>
 
       {/* Grid Pattern */}
       <div className="absolute inset-0 opacity-50" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
-
-      {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      }}></div>     {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto text-center">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full text-sm font-semibold mb-8 animate-fade-in">
+          <div className="inline-flex items-center px-3 py-1.5 bg-[var(--color-accent)] text-white rounded-full text-xs font-semibold mb-4 animate-fade-in">
             <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
             Available for New Opportunities
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 leading-tight text-white drop-shadow-lg">
+            <span className="bg-gradient-to-r from-white via-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent">
               Saikiran Salama
             </span>
           </h1>
 
           {/* Animated Subtitle */}
-          <div className="text-2xl md:text-4xl font-semibold mb-8 h-12 flex items-center justify-center">
-            <span className="text-gray-600 mr-3">I transform data into</span>
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent min-w-[300px]">
+          <div className="text-xl md:text-2xl font-semibold mb-6 h-10 flex items-center justify-center text-white drop-shadow">
+            <span className="mr-2">I transform data into</span>
+            <span className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent min-w-[180px]">
               {texts[currentText]}
             </span>
-            <span className="ml-2 animate-pulse">|</span>
+            <span className="ml-1 animate-pulse">|</span>
           </div>
 
-          {/* Compelling Description */}
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Recent Master of Science in Advanced Data Analytics graduate with a <span className="font-bold text-green-600">3.9/4.0 CGPA</span> from the University of North Texas. 
-            Expert in <span className="font-semibold text-blue-600">Python</span>, <span className="font-semibold text-purple-600">SQL</span>, and <span className="font-semibold text-indigo-600">Power BI</span> with published research on COVID-19 enrollment analysis and crime prediction models.
+          {/* Description */}
+          <p className="text-base md:text-lg text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            Advanced Data Analytics graduate with a <span className="font-bold text-green-400">3.9/4.0 CGPA</span> from the University of North Texas. Expert in <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-400">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span> with published research on COVID-19 enrollment analysis and crime prediction models.
           </p>
 
           {/* Stats Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20 hover:shadow-xl transition-all duration-300 group">
-                <div className="flex items-center justify-center mb-3">
-                  <div className="p-2 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl group-hover:scale-110 transition-transform">
-                    <stat.icon className="h-6 w-6 text-white" />
+              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl">
+                <div className="flex items-center justify-center mb-2">
+                  <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl group-hover:scale-110 transition-transform">
+                    <stat.icon className="h-5 w-5 text-white" />
                   </div>
                 </div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-1">
+                <div className="text-xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent mb-1">
                   {stat.number}
                 </div>
-                <div className="text-sm text-gray-600 font-medium">
+                <div className="text-xs text-white/80 font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -101,70 +98,70 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-16">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-6">
             <a 
               href="#projects" 
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-lg"
+              className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[44px]"
             >
               View My Work
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
               href="#contact" 
-              className="group border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50/50 backdrop-blur-sm transition-all duration-300 flex items-center text-lg"
+              className="group bg-[rgba(20,22,30,0.7)] backdrop-blur-md text-white px-6 py-2 rounded-2xl font-semibold border border-white/10 hover:border-blue-600 hover:text-blue-400 hover:bg-blue-900/60 transition-all duration-300 flex items-center text-base min-h-[44px]"
             >
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+              <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               Let's Talk
             </a>
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-16">
-            <div className="flex items-center text-gray-600 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-              <MapPin className="h-5 w-5 mr-2 text-blue-600" />
-              <span className="font-medium">Hyderabad, India</span>
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-6">
+            <div className="flex items-center text-white bg-[rgba(20,22,30,0.7)] backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm min-h-[44px]">
+              <MapPin className="h-4 w-4 mr-1 text-blue-400" />
+              <span className="font-medium text-sm">Hyderabad, India</span>
             </div>
-            <div className="flex items-center text-gray-600 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
-              <Mail className="h-5 w-5 mr-2 text-blue-600" />
-              <span className="font-medium">salamasaikiran@gmail.com</span>
+            <div className="flex items-center text-white bg-[rgba(20,22,30,0.7)] backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm min-h-[44px]">
+              <Mail className="h-4 w-4 mr-1 text-blue-400" />
+              <span className="font-medium text-sm">salamasaikiran@gmail.com</span>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-16">
+          <div className="flex justify-center space-x-2 md:space-x-4 mb-6">
             <a 
               href="https://github.com/alexchen" 
-              className="p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md hover:bg-white/70 transition-all duration-300 group"
+              className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="h-6 w-6 text-gray-600 group-hover:text-gray-900 transition-colors" />
+              <Github className="h-6 w-6 text-white group-hover:text-blue-400 transition-colors" />
             </a>
             <a 
               href="https://linkedin.com/in/alexchen" 
-              className="p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md hover:bg-white/70 transition-all duration-300 group"
+              className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="h-6 w-6 text-gray-600 group-hover:text-blue-600 transition-colors" />
+              <Linkedin className="h-6 w-6 text-white group-hover:text-blue-400 transition-colors" />
             </a>
             <a 
               href="#resume" 
-              className="p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md hover:bg-white/70 transition-all duration-300 group"
+              className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
             >
-              <Download className="h-6 w-6 text-gray-600 group-hover:text-green-600 transition-colors" />
+              <Download className="h-6 w-6 text-white group-hover:text-green-400 transition-colors" />
             </a>
           </div>
         </div>
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button 
           onClick={scrollToAbout} 
-          className="p-4 bg-white/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-md hover:bg-white/70 transition-all duration-300 animate-bounce"
+          className="p-3 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 animate-bounce min-h-[44px] min-w-[44px]"
         >
-          <ChevronDown className="h-6 w-6 text-gray-600" />
+          <ChevronDown className="h-5 w-5 text-white" />
         </button>
       </div>
     </div>

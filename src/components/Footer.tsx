@@ -27,73 +27,73 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
+    <footer className="bg-[var(--color-card)] text-[var(--color-foreground)]">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {/* Brand Section */}
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <div className="lg:col-span-2 mb-4 md:mb-0">
+            <div className="mb-3 md:mb-6">
+              <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent">
                 Saikiran Salama
               </h3>
-              <p className="text-blue-300 font-semibold">Data Analytics Graduate & Research Professional</p>
+              <p className="text-[var(--color-accent)] font-semibold text-sm md:text-base">Data Analytics Graduate & Research Professional</p>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              Recent Master's graduate in Advanced Data Analytics with published research and expertise in machine learning. 
-              Specialized in statistical analysis, predictive modeling, and data visualization.
+            <p className="text-[var(--color-muted)] mb-3 md:mb-6 leading-relaxed text-xs md:text-base" style={{ color: 'var(--color-foreground, #334155)' }}>
+              Recent Master's graduate in Advanced Data Analytics with published research and expertise in machine learning. Specialized in statistical analysis, predictive modeling, and data visualization.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-2 md:space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`p-3 bg-gray-800 rounded-2xl hover:bg-gray-700 transition-all duration-300 ${social.color}`}
+                  className={`p-3 md:p-4 bg-[var(--color-background)] border border-[var(--color-border)] rounded-2xl hover:bg-[var(--color-accent)] hover:text-white transition-all duration-300 ${social.color}`}
+                  style={{ minWidth: 44, minHeight: 44 }}
                 >
-                  <social.icon className="h-5 w-5" />
+                  <social.icon className="h-4 w-4 md:h-5 md:w-5" />
                 </a>
               ))}
             </div>
           </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Quick Links</h4>
-            <ul className="space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
-                  >
-                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 group-hover:scale-125 transition-transform"></span>
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Quick Links Section */}
+          <div className="col-span-1 flex flex-col items-center justify-center">
+            <div className="w-full max-w-xs card py-4 md:py-6 px-4 md:px-6 flex flex-col items-start space-y-2 md:space-y-4">
+              <h4 className="text-base md:text-lg font-semibold mb-1 md:mb-2 text-[var(--color-foreground)]">Quick Links</h4>
+              <ul className="w-full space-y-1 md:space-y-2">
+                {[
+                  { name: 'About', href: '#about' },
+                  { name: 'Projects', href: '#projects' },
+                  { name: 'Skills', href: '#skills' },
+                  { name: 'Resume', href: '#resume' },
+                  { name: 'Contact', href: '#contact' },
+                ].map((link) => (
+                  <li key={link.name} className="w-full">
+                    <a
+                      href={link.href}
+                      className="block w-full py-2 md:py-3 px-2 md:px-3 rounded-md text-[var(--color-foreground)] font-medium hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] transition-colors text-xs md:text-base"
+                      style={{ minHeight: 44 }}
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Get In Touch</h4>
-            <ul className="space-y-4">
-              {contactInfo.map((contact, index) => (
-                <li key={index}>
-                  <a
-                    href={contact.href}
-                    className="flex items-center text-gray-300 hover:text-white transition-colors duration-300 group"
-                  >
-                    <div className="p-2 bg-gray-800 rounded-xl mr-3 group-hover:bg-gray-700 transition-colors">
-                      <contact.icon className="h-4 w-4" />
-                    </div>
-                    <span className="text-sm">{contact.text}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Info Section (right side) */}
+          <div className="col-span-1 flex flex-col items-end space-y-2 md:space-y-4">
+            {/* Email Card */}
+            <div className="flex items-center bg-[var(--color-background)] border border-[var(--color-border)] rounded-xl px-3 md:px-4 py-1.5 md:py-2 shadow-sm text-xs md:text-base">
+              <Mail className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2 text-[var(--color-accent)]" />
+              <span className="font-medium text-[var(--color-foreground)]">salamasaikiran@gmail.com</span>
+            </div>
+            {/* Location Card */}
+            <div className="flex items-center bg-[var(--color-background)] border border-[var(--color-border)] rounded-xl px-3 md:px-4 py-1.5 md:py-2 shadow-sm text-xs md:text-base">
+              <MapPin className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2 text-[var(--color-accent)]" />
+              <span className="font-medium text-[var(--color-foreground)]">Hyderabad, India</span>
+            </div>
           </div>
         </div>
       </div>
