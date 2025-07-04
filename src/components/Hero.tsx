@@ -52,9 +52,11 @@ const Hero = () => {
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           
           {/* Badge */}
-          <div className="inline-flex items-center px-3 py-1.5 bg-[var(--color-accent)] text-white rounded-full text-xs font-semibold mb-4 animate-fade-in">
-            <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></span>
-            Available for New Opportunities
+          <div className="flex justify-center mb-6 animate-fade-in">
+            <div className="flex items-center px-6 py-3 bg-green-600/90 rounded-full shadow-lg text-white text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
+              <span className="w-4 h-4 bg-green-400 rounded-full mr-3 animate-pulse border-2 border-white shadow" />
+              <span className="drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Available for New Opportunities</span>
+            </div>
           </div>
 
           {/* Main Headline */}
@@ -112,18 +114,6 @@ const Hero = () => {
               <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               Let's Talk
             </a>
-          </div>
-
-          {/* Contact Info */}
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-6">
-            <div className="flex items-center text-white bg-[rgba(20,22,30,0.7)] backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm min-h-[44px]">
-              <MapPin className="h-4 w-4 mr-1 text-blue-400" />
-              <span className="font-medium text-sm">Hyderabad, India</span>
-            </div>
-            <div className="flex items-center text-white bg-[rgba(20,22,30,0.7)] backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm min-h-[44px]">
-              <Mail className="h-4 w-4 mr-1 text-blue-400" />
-              <span className="font-medium text-sm">salamasaikiran@gmail.com</span>
-            </div>
           </div>
 
           {/* Social Links */}
