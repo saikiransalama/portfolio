@@ -4,15 +4,15 @@
 
 /* Revamped, accessible, vibrant color palette */
 :root {
-  --color-background: #101014;   /* deep, rich background */
-  --color-surface: #181A20;      /* card/section background */
-  --color-header: #181A20;       /* header/nav background */
-  --color-card: #181A20;
-  --color-foreground: #FFFFFF;   /* pure white for max contrast */
-  --color-secondary: #C7C9D1;    /* soft, readable gray */
-  --color-muted: #7A7C85;        /* muted/disabled text */
-  --color-accent: #4F8CFF;       /* primary accent blue */
-  --color-accent2: #00E6A2;      /* secondary accent green */
+  --color-background: #FFFFFF;   /* light background */
+  --color-surface: #F7FAFC;      /* light card/section background */
+  --color-header: #F7FAFC;       /* header/nav background */
+  --color-card: #FFFFFF;         /* card background */
+  --color-foreground: #1A202C;   /* dark text for max contrast */
+  --color-secondary: #4A5568;    /* readable gray for secondary text */
+  --color-muted: #A0AEC0;        /* muted/disabled text */
+  --color-accent: #2563EB;       /* vibrant blue accent */
+  --color-accent2: #10B981;      /* vibrant green accent */
   --color-highlight: #A259FF;    /* purple for gradients */
   --color-success: #00E676;
   --color-warning: #FFD600;
