@@ -76,7 +76,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-base md:text-lg text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            Advanced Data Analytics graduate with a <span className="font-bold text-green-400">3.9/4.0 CGPA</span> from the University of North Texas. Expert in <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-400">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span> with published research on COVID-19 enrollment analysis and crime prediction models.
+            Advanced Data Analytics graduate with a <span className="font-bold text-green-400">3.9/4.0 CGPA</span> from the University of North Texas. Expert in <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-400">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span> with published research on COVID-19 enrollment analysis.
           </p>
 
           {/* Stats Grid */}
