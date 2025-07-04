@@ -60,14 +60,14 @@ const Hero = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 leading-tight text-white drop-shadow-lg">
-            <span className="bg-gradient-to-r from-white via-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-3 leading-tight text-[var(--color-foreground)]">
+            <span className="bg-gradient-to-r from-[var(--color-foreground)] via-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent">
               Saikiran Salama: Turning Data Into Opportunity
             </span>
           </h1>
 
           {/* Animated Subtitle */}
-          <div className="text-xl md:text-2xl font-semibold mb-6 h-10 flex items-center justify-center text-white drop-shadow">
+          <div className="text-xl md:text-2xl font-semibold mb-6 h-10 flex items-center justify-center text-[var(--color-secondary)]">
             <span className="mr-2">I turn raw data into:</span>
             <span className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent min-w-[180px]">
               {['Breakthrough Insights','Business Wins','Predictive Power','Smart Decisions'][currentText]}
@@ -75,8 +75,8 @@ const Hero = () => {
           </div>
 
           {/* Description */}
-          <p className="text-base md:text-lg text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            Data Analytics trailblazer (<span className="font-bold text-green-400">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-400">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
+          <p className="text-base md:text-lg text-[var(--color-secondary)] mb-6 max-w-2xl mx-auto leading-relaxed">
+            Data Analytics trailblazer (<span className="font-bold text-green-600">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-700">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
           </p>
 
           {/* Stats Grid */}
