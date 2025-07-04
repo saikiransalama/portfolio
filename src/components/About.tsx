@@ -30,10 +30,10 @@ const About = () => {
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
-          About Me
+          Meet Your Next Data Partner
         </h2>
         <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
-          Recent Master of Science in Advanced Data Analytics graduate with published research on COVID-19 enrollment analysis and crime prediction models using machine learning.
+          I'm a data storyteller with a Master's in Advanced Data Analytics, published research, and a passion for turning numbers into narratives that drive action.
         </p>
       </div>
       {/* Achievement Stats */}
@@ -86,10 +86,10 @@ const About = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-[var(--color-foreground)]">My Journey in Data Analytics</h3>
                   <p className="text-[var(--color-muted)] mb-4 leading-relaxed">
-                    My passion for data began during my Bachelor's in Computer Science at Osmania University, where I discovered the power of transforming raw numbers into meaningful insights. I've since completed my Master's in Advanced Data Analytics at the University of North Texas with a 3.9/4.0 CGPA.
+                    From coding in college to publishing research that matters, my journey is all about using data to solve real problems. At Amazon, I didn't just analyze numbers—I made them work for people.
                   </p>
                   <p className="text-[var(--color-muted)] mb-6 leading-relaxed">
-                    I specialize in advanced analytics and machine learning, with published research on COVID-19 enrollment analysis and crime prediction models using over 8 million records. My experience at Amazon as a Flex Payment Investigator & SME has honed my analytical skills and business acumen.
+                    I specialize in advanced analytics and machine learning, with published research on COVID-19 enrollment analysis. My experience at Amazon as a Flex Payment Investigator & SME has honed my analytical skills and business acumen.
                   </p>
                   <div className="flex items-center text-[var(--color-accent)] font-semibold group cursor-pointer">
                     <span>Read my full story</span>
@@ -101,10 +101,10 @@ const About = () => {
                   <ul className="space-y-3">
                     {[
                       "Master's in Advanced Data Analytics (3.9/4.0 CGPA)",
-                      "Published research on COVID-19 enrollment analysis",
-                      "Advanced machine learning with 8M+ crime records",
-                      "Amazon Flex Payment Investigator & SME experience",
-                      "Expertise in Python, SQL, Power BI, and Tableau"
+                      "Published research that's making waves",
+                      "Machine learning with millions of real-world records",
+                      "Amazon SME: where business meets analytics",
+                      "Fluent in Python, SQL, Power BI, Tableau"
                     ].map((item, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />

@@ -40,7 +40,7 @@ const Footer = () => {
               <p className="text-[var(--color-accent)] font-semibold text-sm md:text-base">Data Analytics Graduate & Research Professional</p>
             </div>
             <p className="text-[var(--color-muted)] mb-3 md:mb-6 leading-relaxed text-xs md:text-base" style={{ color: 'var(--color-foreground, #334155)' }}>
-              Recent Master's graduate in Advanced Data Analytics with published research and expertise in machine learning. Specialized in statistical analysis, predictive modeling, and data visualization.
+              Data isn't just my job—it's my passion. Let's unlock insights and create impact together.
             </p>
             <div className="flex space-x-2 md:space-x-4">
               {socialLinks.map((social) => (

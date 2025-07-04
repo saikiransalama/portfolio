@@ -83,10 +83,10 @@ const Projects = () => {
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
-          Featured Projects
+          Proof in the Projects
         </h2>
         <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
-          Academic research projects and data analysis work showcasing advanced analytics skills and published research contributions.
+          See how I've turned complex data into real-world results—each project is a story of impact.
         </p>
       </div>
       {/* Category Filter */}

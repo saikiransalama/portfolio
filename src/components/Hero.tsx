@@ -55,28 +55,28 @@ const Hero = () => {
           <div className="flex justify-center mb-6 animate-fade-in">
             <div className="flex items-center px-6 py-3 bg-green-600/90 rounded-full shadow-lg text-white text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
               <span className="w-4 h-4 bg-green-400 rounded-full mr-3 animate-pulse border-2 border-white shadow" />
-              <span className="drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Available for New Opportunities</span>
+              <span className="drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Open to Game-Changing Roles</span>
             </div>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl md:text-6xl font-extrabold mb-3 leading-tight text-white drop-shadow-lg">
             <span className="bg-gradient-to-r from-white via-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent">
-              Saikiran Salama
+              Saikiran Salama: Turning Data Into Opportunity
             </span>
           </h1>
 
           {/* Animated Subtitle */}
           <div className="text-xl md:text-2xl font-semibold mb-6 h-10 flex items-center justify-center text-white drop-shadow">
-            <span className="mr-2">I transform data into</span>
+            <span className="mr-2">I turn raw data into:</span>
             <span className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent min-w-[180px]">
-              {texts[currentText]}
+              {['Breakthrough Insights','Business Wins','Predictive Power','Smart Decisions'][currentText]}
             </span>
           </div>
 
           {/* Description */}
           <p className="text-base md:text-lg text-white/90 mb-6 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            Advanced Data Analytics graduate with a <span className="font-bold text-green-400">3.9/4.0 CGPA</span> from the University of North Texas. Expert in <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-400">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span> with published research on COVID-19 enrollment analysis.
+            Data Analytics trailblazer (<span className="font-bold text-green-400">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-400">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
           </p>
 
           {/* Stats Grid */}
@@ -104,7 +104,7 @@ const Hero = () => {
               href="#projects" 
               className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[44px]"
             >
-              View My Work
+              See My Impact
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
@@ -112,7 +112,7 @@ const Hero = () => {
               className="group bg-[rgba(20,22,30,0.7)] backdrop-blur-md text-white px-6 py-2 rounded-2xl font-semibold border border-white/10 hover:border-blue-600 hover:text-blue-400 hover:bg-blue-900/60 transition-all duration-300 flex items-center text-base min-h-[44px]"
             >
               <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
-              Let's Talk
+              Start a Conversation
             </a>
           </div>
 

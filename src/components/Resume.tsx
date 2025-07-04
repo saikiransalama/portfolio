@@ -128,10 +128,10 @@ const Resume = () => {
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
-          Resume & Experience
+          Experience That Delivers Results
         </h2>
         <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
-          Academic excellence with published research and professional experience in data analysis and customer service optimization.
+          From Amazon to academia, I've delivered results that matter—backed by data, driven by curiosity.
         </p>
       </div>
       {/* Quick Stats */}
@@ -383,11 +383,8 @@ const Resume = () => {
       <div className="text-center mt-16">
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Want to see the full resume?
+            Get the full story—download my resume for a deep dive into my data-driven journey.
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Download my complete resume with detailed project descriptions, technical skills, and professional references.
-          </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="#"

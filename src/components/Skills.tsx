@@ -102,10 +102,10 @@ const Skills = () => {
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
-          Technical Skills
+          My Data Superpowers
         </h2>
         <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
-          A comprehensive toolkit of programming languages, tools, and methodologies that enable me to deliver impactful data solutions.
+          From code to cloud, I wield the tools that turn data into business breakthroughs.
         </p>
       </div>
       {/* Skills Overview Stats */}
@@ -244,7 +244,7 @@ const Skills = () => {
       <div className="text-center mt-16">
         <div className="card">
           <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-4">
-            Ready to leverage these skills for your project?
+            Let's put these skills to work—your next big win starts here.
           </h3>
           <p className="text-[var(--color-muted)] mb-6 max-w-2xl mx-auto">
             I'm always excited to take on new challenges and apply my technical expertise to solve complex business problems.

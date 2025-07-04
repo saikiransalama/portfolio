@@ -113,10 +113,10 @@ const Contact = () => {
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-[var(--color-foreground)] to-[var(--color-muted)] bg-clip-text text-transparent">
-          Let's Work Together
+          Ready to Collaborate?
         </h2>
         <p className="text-base md:text-xl text-[var(--color-muted)] max-w-2xl mx-auto leading-relaxed">
-          I'm always excited to discuss research opportunities, collaborate on data analysis projects, or connect with fellow analytics professionals.
+          Let's team up to turn your data into your next big advantage. Reach out—let's make something amazing happen.
         </p>
       </div>
 
