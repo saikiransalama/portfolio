@@ -53,8 +53,8 @@ const Hero = () => {
           
           {/* Badge */}
           <div className="flex justify-center mb-6 animate-fade-in">
-            <div className="flex items-center px-6 py-3 bg-green-600/90 rounded-full shadow-lg text-white text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
-              <span className="w-4 h-4 bg-green-400 rounded-full mr-3 animate-pulse border-2 border-white shadow" />
+            <div className="flex items-center px-6 py-3 bg-[var(--color-accent)] rounded-full shadow-lg text-white text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
+              <span className="w-4 h-4 bg-[var(--color-accent2)] rounded-full mr-3 animate-pulse border-2 border-white shadow" />
               <span className="drop-shadow-lg" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Open to Game-Changing Roles</span>
             </div>
           </div>
@@ -76,13 +76,13 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-base md:text-lg text-[var(--color-secondary)] mb-6 max-w-2xl mx-auto leading-relaxed">
-            Data Analytics trailblazer (<span className="font-bold text-green-600">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-purple-700">SQL</span>, and <span className="font-semibold text-[var(--color-accent2)]">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
+            Data Analytics trailblazer (<span className="font-bold text-[var(--color-highlight)]">3.9/4.0 CGPA</span>, UNT) with a knack for <span className="font-semibold text-[var(--color-accent)]">Python</span>, <span className="font-semibold text-[var(--color-accent2)]">SQL</span>, and <span className="font-semibold text-[var(--color-highlight)]">Power BI</span>. Published researcher—my work on COVID-19 enrollment is shaping real-world decisions.
           </p>
 
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl">
+              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-surface)] backdrop-blur-md rounded-2xl">
                 <div className="flex items-center justify-center mb-2">
                   <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl group-hover:scale-110 transition-transform">
                     <stat.icon className="h-5 w-5 text-white" />
@@ -91,7 +91,7 @@ const Hero = () => {
                 <div className="text-xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent mb-1">
                   {stat.number}
                 </div>
-                <div className="text-xs text-white/80 font-medium">
+                <div className="text-xs text-[var(--color-secondary)] font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -102,14 +102,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-6">
             <a 
               href="#projects" 
-              className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[44px]"
+              className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-6 py-2 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[44px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
             >
               See My Impact
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
               href="#contact" 
-              className="group bg-[rgba(20,22,30,0.7)] backdrop-blur-md text-white px-6 py-2 rounded-2xl font-semibold border border-white/10 hover:border-blue-600 hover:text-blue-400 hover:bg-blue-900/60 transition-all duration-300 flex items-center text-base min-h-[44px]"
+              className="group bg-[var(--color-button-secondary-fill)] text-[var(--color-button-secondary-text)] px-6 py-2 rounded-2xl font-semibold border-2 border-[var(--color-button-secondary-border)] hover:bg-[var(--color-button-secondary-hover-fill)] hover:text-[var(--color-button-secondary-hover-text)] transition-all duration-300 flex items-center text-base min-h-[44px]"
             >
               <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
               Start a Conversation
@@ -120,25 +120,25 @@ const Hero = () => {
           <div className="flex justify-center space-x-2 md:space-x-4 mb-6">
             <a 
               href="https://github.com/saikiransalama" 
-              className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              className="p-3 md:p-4 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="h-6 w-6 text-white group-hover:text-blue-400 transition-colors" />
+              <Github className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
             </a>
             <a 
               href="https://www.linkedin.com/in/saikiransalama/" 
-              className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              className="p-3 md:p-4 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="h-6 w-6 text-white group-hover:text-blue-400 transition-colors" />
+              <Linkedin className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
             </a>
             <a 
               href="#resume" 
-              className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              className="p-3 md:p-4 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
             >
-              <Download className="h-6 w-6 text-white group-hover:text-green-400 transition-colors" />
+              <Download className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
             </a>
           </div>
         </div>
@@ -148,9 +148,9 @@ const Hero = () => {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button 
           onClick={scrollToAbout} 
-          className="p-3 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 animate-bounce min-h-[44px] min-w-[44px]"
+          className="p-3 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 animate-bounce min-h-[44px] min-w-[44px]"
         >
-          <ChevronDown className="h-5 w-5 text-white" />
+          <ChevronDown className="h-5 w-5 text-[var(--color-foreground)] hover:text-white transition-colors" />
         </button>
       </div>
     </div>
