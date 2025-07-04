@@ -126,7 +126,7 @@ const Hero = () => {
             </div>
             <div className="flex items-center text-gray-600 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
               <Mail className="h-5 w-5 mr-2 text-blue-600" />
-              <span className="font-medium">saikiransalama@gmail.com</span>
+              <span className="font-medium">salamasaikiran@gmail.com</span>
             </div>
           </div>
 

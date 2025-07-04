@@ -46,9 +46,9 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "saikiransalama@gmail.com",
+      value: "salamasaikiran@gmail.com",
       description: "I typically respond within 24 hours",
-      action: "mailto:saikiransalama@gmail.com"
+      action: "mailto:salamasaikiran@gmail.com"
     },
     {
       icon: Linkedin,

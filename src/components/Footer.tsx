@@ -22,7 +22,7 @@ const Footer = () => {
   ];
 
   const contactInfo = [
-    { icon: Mail, text: 'saikiransalama@gmail.com', href: 'mailto:saikiransalama@gmail.com' },
+    { icon: Mail, text: 'salamasaikiran@gmail.com', href: 'mailto:salamasaikiran@gmail.com' },
     { icon: MapPin, text: 'Hyderabad, India', href: '#' }
   ];
 
