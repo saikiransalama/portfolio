@@ -70,7 +70,6 @@ const Hero = () => {
             <span className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] bg-clip-text text-transparent min-w-[180px]">
               {texts[currentText]}
             </span>
-            <span className="ml-1 animate-pulse">|</span>
           </div>
 
           {/* Description */}
@@ -130,7 +129,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-2 md:space-x-4 mb-6">
             <a 
-              href="https://github.com/alexchen" 
+              href="https://github.com/saikiransalama" 
               className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
@@ -138,7 +137,7 @@ const Hero = () => {
               <Github className="h-6 w-6 text-white group-hover:text-blue-400 transition-colors" />
             </a>
             <a 
-              href="https://linkedin.com/in/alexchen" 
+              href="https://www.linkedin.com/in/saikiransalama/" 
               className="p-3 md:p-4 bg-[rgba(20,22,30,0.7)] backdrop-blur-md rounded-2xl shadow-sm hover:shadow-md hover:bg-[rgba(20,22,30,0.9)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
