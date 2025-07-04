@@ -41,11 +41,11 @@ const About = () => {
         {achievements.map((achievement, index) => (
           <div key={index} className="card group p-4 md:p-6">
             <div className="flex items-center justify-center mb-2 md:mb-4">
-              <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl group-hover:scale-110 transition-transform">
-                <achievement.icon className={`h-6 w-6 md:h-8 md:w-8 ${achievement.color}`} />
+              <div className="p-2 bg-[var(--color-surface)] rounded-xl group-hover:scale-110 transition-transform">
+                <achievement.icon className="h-6 w-6 md:h-8 md:w-8 text-black" />
               </div>
             </div>
-            <div className={`text-lg md:text-3xl font-bold ${achievement.color} mb-1 md:mb-2`}>
+            <div className="text-lg md:text-3xl font-bold text-black mb-1 md:mb-2">
               {achievement.number}
             </div>
             <div className="text-xs md:text-sm text-[var(--color-secondary)] font-medium text-center">
