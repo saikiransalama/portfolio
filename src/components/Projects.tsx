@@ -173,16 +173,38 @@ const Projects = () => {
                   <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
                   View Case Study
                 </a>
+              ) : project.title === "Chicago Crime Prediction Model" ? (
+                <a
+                  href="https://github.com/saikiransalama/covid19-research-capstone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
+                >
+                  <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Case Study
+                </a>
               ) : (
                 <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
                   <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
                   View Case Study
                 </button>
               )}
-              <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
-                <Code className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
-                View Code
-              </button>
+              {project.title === "Chicago Crime Prediction Model" ? (
+                <a
+                  href="https://github.com/saikiransalama/covid19-research-capstone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
+                >
+                  <Code className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Code
+                </a>
+              ) : (
+                <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
+                  <Code className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Code
+                </button>
+              )}
             </div>
           </div>
         ))}
