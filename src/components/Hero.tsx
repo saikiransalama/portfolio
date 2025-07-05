@@ -67,7 +67,7 @@ const Hero = () => {
           
           {/* Badge */}
           <div className="flex justify-center mb-6 animate-fade-in">
-            <div className="flex items-center px-6 py-3 bg-[var(--color-surface)] rounded-full shadow-lg text-black text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
+            <div className="flex items-center px-6 py-3 bg-[var(--color-card-bg)] rounded-full shadow-lg text-black text-lg md:text-2xl font-bold tracking-wide" style={{letterSpacing: '0.03em'}}>
               <span className="w-4 h-4 bg-[var(--color-highlight)] rounded-full mr-3 animate-pulse border-2 border-white shadow" />
               <span className="drop-shadow-lg font-bold" style={{textShadow: '0 2px 8px rgba(0,0,0,0.15)'}}>Open to Game-Changing Roles</span>
             </div>
@@ -94,7 +94,7 @@ const Hero = () => {
           {/* Stats Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 max-w-3xl mx-auto">
             {stats.map((stat, index) => (
-              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-surface)] backdrop-blur-md rounded-2xl" style={{ border: '2px solid #000' }}>
+              <div key={index} className="card hover:shadow-xl transition-all duration-300 group p-4 md:p-6 bg-[var(--color-card-bg)] backdrop-blur-md rounded-2xl" style={{ border: '2px solid #000' }}>
                 <div className="flex items-center justify-center mb-2 md:mb-4">
                   <div className="p-2 bg-black rounded-xl transition-all duration-300">
                     <stat.icon className="h-5 w-5 text-white transition-colors" />
@@ -132,7 +132,7 @@ const Hero = () => {
           <div className="flex justify-center space-x-2 md:space-x-4 mb-6">
             <a 
               href="https://github.com/saikiransalama" 
-              className="p-3 md:p-4 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              className="p-3 md:p-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -140,7 +140,7 @@ const Hero = () => {
             </a>
             <a 
               href="https://www.linkedin.com/in/saikiransalama/" 
-              className="p-3 md:p-4 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              className="p-3 md:p-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -148,7 +148,7 @@ const Hero = () => {
             </a>
             <a 
               href="#resume" 
-              className="p-3 md:p-4 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              className="p-3 md:p-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
             >
               <Download className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
             </a>
@@ -160,7 +160,7 @@ const Hero = () => {
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
         <button 
           onClick={scrollToAbout} 
-          className="p-3 bg-[var(--color-surface)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 animate-bounce min-h-[44px] min-w-[44px]"
+          className="p-3 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 animate-bounce min-h-[44px] min-w-[44px]"
         >
           <ChevronDown className="h-5 w-5 text-[var(--color-foreground)] hover:text-white transition-colors" />
         </button>

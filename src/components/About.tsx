@@ -14,8 +14,8 @@ const About = () => {
   const skills = [
     { category: "Programming", items: ["Python", "R", "SQL", "JavaScript"], icon: Database },
     { category: "Analytics", items: ["Statistical Analysis", "Machine Learning", "Predictive Modeling", "A/B Testing"], icon: BarChart3 },
-    { category: "Visualization", items: ["Tableau", "Power BI", "D3.js", "Matplotlib"], icon: Target },
-    { category: "Tools", items: ["Excel", "Google Analytics", "AWS", "Git"], icon: Zap }
+    { category: "Visualization", items: ["Tableau", "Power BI", "Matplotlib"], icon: Target },
+    { category: "Tools", items: ["Excel", "Google Analytics", "Git"], icon: Zap }
   ];
 
   const values = [
@@ -26,145 +26,93 @@ const About = () => {
   ];
 
   return (
-    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
+    <div className="py-4 md:py-8 px-2 sm:px-4 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
-      <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
           Meet Your Next Data Partner
         </h2>
-        <p className="text-base md:text-xl text-[var(--color-secondary)] max-w-2xl mx-auto leading-relaxed">
-          I'm a data storyteller with a Master's in Advanced Data Analytics, published research, and a passion for turning numbers into narratives that drive action.
+        <p className="text-base md:text-lg text-[var(--color-secondary)] max-w-xl mx-auto leading-relaxed">
+          Transforming data into actionable insights that drive business growth
         </p>
       </div>
-      {/* Achievement Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
-        {achievements.map((achievement, index) => (
-          <div key={index} className="card group p-4 md:p-6">
-            <div className="flex items-center justify-center mb-2 md:mb-4">
-              <div className="p-2 bg-[var(--color-surface)] rounded-xl group-hover:scale-110 transition-transform">
-                <achievement.icon className="h-6 w-6 md:h-8 md:w-8 text-black" />
-              </div>
-            </div>
-            <div className="text-lg md:text-3xl font-bold text-black mb-1 md:mb-2">
-              {achievement.number}
-            </div>
-            <div className="text-xs md:text-sm text-[var(--color-secondary)] font-medium text-center">
-              {achievement.label}
-            </div>
-          </div>
-        ))}
-      </div>
-      {/* Tabbed Content */}
-      <div className="card overflow-hidden">
-        {/* Tab Navigation */}
-        <div className="flex flex-col sm:flex-row border-b border-[var(--color-border)]">
-          {[
-            { id: 'story', label: 'My Story', icon: Users },
-            { id: 'skills', label: 'Skills & Tools', icon: Database },
-            { id: 'values', label: 'Values', icon: Target }
-          ].map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 flex items-center justify-center py-3 md:py-4 px-2 md:px-4 font-semibold transition-all duration-300 text-xs md:text-base ${
-                activeTab === tab.id
-                  ? 'bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] text-white'
-                  : 'text-[var(--color-secondary)] hover:text-[var(--color-foreground)] hover:bg-[var(--color-background)]/60'
-              }`}
-              style={{ minHeight: 44 }}
-            >
-              <tab.icon className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
-              {tab.label}
-            </button>
-          ))}
+
+      {/* Four Cards Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 1st Card: My Journey */}
+        <div className="card bg-[var(--color-card-bg)] rounded-2xl shadow-sm flex flex-col h-full p-6">
+          <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)] text-center" style={{ fontFamily: 'Caudex, serif' }}>
+            My Journey in Data Analytics
+          </h3>
+          <p className="text-[var(--color-secondary)] mb-4 leading-relaxed text-justify">
+            From coding in college to publishing research that matters, my journey is all about using data to solve real problems. At Amazon, I didn't just analyze numbers. I made them work for people.
+          </p>
+          <p className="text-[var(--color-secondary)] leading-relaxed text-justify">
+            I specialize in advanced analytics and machine learning, with published research on COVID-19 enrollment analysis. My experience at Amazon as a Flex Payment Investigator & SME has honed my analytical skills and business acumen.
+          </p>
         </div>
-        {/* Tab Content */}
-        <div className="p-4 md:p-6">
-          {activeTab === 'story' && (
-            <div className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
+
+        {/* 2nd Card: What I Bring to the Table */}
+        <div className="card bg-[var(--color-card-bg)] rounded-2xl shadow-sm flex flex-col h-full p-6">
+          <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)] text-center" style={{ fontFamily: 'Caudex, serif' }}>
+            What I Bring to the Table
+          </h3>
+          <ul className="space-y-4">
+            <li className="flex items-start">
+              <CheckCircle className="h-6 w-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
+              <span className="text-[var(--color-secondary)] text-base font-medium">Machine learning with millions of real-world records</span>
+            </li>
+            <li className="flex items-start">
+              <CheckCircle className="h-6 w-6 text-green-600 mr-4 mt-1 flex-shrink-0" />
+              <span className="text-[var(--color-secondary)] text-base font-medium">Fluent in Python, SQL, Power BI, Tableau</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* 3rd Card: Technical Skills & Tools */}
+        <div className="card bg-[var(--color-card-bg)] rounded-2xl shadow-sm flex flex-col h-full p-6">
+          <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)] text-center" style={{ fontFamily: 'Caudex, serif' }}>
+            Technical Skills & Tools
+          </h3>
+          <div className="space-y-6">
+            {skills.map((skill) => (
+              <div key={skill.category} className="mb-4">
+                <div className="flex items-center mb-1">
+                  <div className="p-2 bg-[var(--color-card-bg)] rounded-xl mr-3 flex-shrink-0 flex items-center justify-center" style={{ width: 40, height: 40 }}>
+                    <skill.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <span className="font-bold text-lg text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>{skill.category}</span>
+                </div>
+                <div className="flex flex-wrap gap-2 ml-12">
+                  {skill.items.map((item) => (
+                    <span key={item} className="bg-black/10 text-[var(--color-foreground)] px-3 py-1 rounded-full text-sm font-medium">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 4th Card: My Core Values */}
+        <div className="card bg-[var(--color-card-bg)] rounded-2xl shadow-sm flex flex-col h-full p-6">
+          <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)] text-center" style={{ fontFamily: 'Caudex, serif' }}>
+            My Core Values
+          </h3>
+          <div className="space-y-6">
+            {values.map((value, index) => (
+              <div key={index} className="flex items-start mb-2">
+                <div className="p-2 bg-[var(--color-card-bg)] rounded-xl mr-4 flex-shrink-0 flex items-center justify-center" style={{ width: 40, height: 40 }}>
+                  <value.icon className="h-6 w-6 text-white" />
+                </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-[var(--color-foreground)]">My Journey in Data Analytics</h3>
-                  <p className="text-[var(--color-secondary)] mb-4 leading-relaxed">
-                    From coding in college to publishing research that matters, my journey is all about using data to solve real problems. At Amazon, I didn't just analyze numbers—I made them work for people.
-                  </p>
-                  <p className="text-[var(--color-secondary)] mb-6 leading-relaxed">
-                    I specialize in advanced analytics and machine learning, with published research on COVID-19 enrollment analysis. My experience at Amazon as a Flex Payment Investigator & SME has honed my analytical skills and business acumen.
-                  </p>
-                  <div className="flex items-center text-[var(--color-accent)] font-semibold group cursor-pointer">
-                    <span>Read my full story</span>
-                    <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </div>
-                </div>
-                <div className="bg-gradient-to-br from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-2xl p-8">
-                  <h4 className="text-xl font-bold mb-4 text-[var(--color-foreground)]">What I Bring to the Table</h4>
-                  <ul className="space-y-3">
-                    {[
-                      "Master's in Advanced Data Analytics (3.9/4.0 CGPA)",
-                      "Published research that's making waves",
-                      "Machine learning with millions of real-world records",
-                      "Amazon SME: where business meets analytics",
-                      "Fluent in Python, SQL, Power BI, Tableau"
-                    ].map((item, index) => (
-                      <li key={index} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-[var(--color-foreground)]">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <h4 className="text-lg font-bold text-[var(--color-foreground)] mb-1" style={{ fontFamily: 'Caudex, serif' }}>{value.title}</h4>
+                  <p className="text-base text-[var(--color-secondary)] leading-relaxed">{value.description}</p>
                 </div>
               </div>
-            </div>
-          )}
-
-          {activeTab === 'skills' && (
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)]">Technical Skills & Tools</h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                {skills.map((skillGroup, index) => (
-                  <div key={index} className="bg-[var(--color-card)] rounded-2xl p-6">
-                    <div className="flex items-center mb-4">
-                      <div className="p-2 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-lg mr-3">
-                        <skillGroup.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <h4 className="text-lg font-semibold text-[var(--color-foreground)]">{skillGroup.category}</h4>
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {skillGroup.items.map((item, itemIndex) => (
-                        <span
-                          key={itemIndex}
-                          className="px-3 py-1 bg-[var(--color-card)] rounded-full text-sm font-medium text-[var(--color-foreground)] border border-[var(--color-border)]"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {activeTab === 'values' && (
-            <div className="space-y-8">
-              <h3 className="text-2xl font-bold mb-6 text-[var(--color-foreground)]">My Core Values</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                {values.map((value, index) => (
-                  <div key={index} className="bg-[var(--color-card)] rounded-2xl p-6 hover:bg-[var(--color-background)]/60 transition-colors">
-                    <div className="flex items-start">
-                      <div className="p-3 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent2)] rounded-xl mr-4">
-                        <value.icon className="h-6 w-6 text-white" />
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold text-[var(--color-foreground)] mb-2">{value.title}</h4>
-                        <p className="text-[var(--color-secondary)] leading-relaxed">{value.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
       </div>
     </div>

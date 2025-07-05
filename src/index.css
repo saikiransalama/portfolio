@@ -5,15 +5,17 @@
 /* New color palette */
 :root {
   /* Base Colors */
-  --color-background: #FFFFFF;   /* primary background */
-  --color-surface: #BFBFBF;      /* secondary background */
+  --color-background: #faf9f6;   /* primary background */
+  --color-surface: #f5d06f;      /* secondary background */
   --color-header: #FFFFFF;       /* header background */
-  --color-card: #FFFFFF;         /* card background */
+  --color-card: #fff;         /* card background */
+  --color-card-dark: #e5e5e5; /* Slightly darker than background for card distinction */
   --color-divider: #BFBFBF;      /* lines and dividers */
+  --color-card-bg: #9ca3af; /* Card background, now even darker for more contrast */
   
   /* Text Colors */
-  --color-foreground: #000000;   /* titles, subtitles, body text */
-  --color-secondary: #000000;    /* secondary text */
+  --color-foreground: #181818;   /* titles, subtitles, body text */
+  --color-secondary: #444;    /* secondary text */
   --color-muted: #000000;        /* muted text */
   
   /* Accent Colors */
@@ -40,6 +42,7 @@
   --color-success: #116778;
   --color-warning: #8F98E2;
   --color-error: #116778;
+  --color-border: #e0e0e0;
 }
 
 /* Base Styles */

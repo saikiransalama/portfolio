@@ -72,7 +72,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`px-3 py-1.5 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-surface)] text-[var(--color-foreground)] font-bold' : 'text-[var(--color-foreground)] hover:bg-[var(--color-surface)]/80 hover:text-[var(--color-foreground)]'}`}
+              className={`px-3 py-1.5 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-card-bg)] text-[var(--color-foreground)] font-bold' : 'text-[var(--color-foreground)] hover:bg-[var(--color-card-bg)]/80 hover:text-[var(--color-foreground)]'}`}
             >
               {item.name}
             </a>
@@ -96,7 +96,7 @@ const Header = () => {
             <a
               key={item.name}
               href={item.href}
-              className={`block px-3 py-2 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-surface)] text-[var(--color-foreground)] font-bold' : 'text-[var(--color-foreground)] hover:bg-[var(--color-surface)]/80 hover:text-[var(--color-foreground)]'}`}
+              className={`block px-3 py-2 rounded-lg font-medium transition-colors duration-200 ${activeSection === item.href.substring(1) ? 'bg-[var(--color-card-bg)] text-[var(--color-foreground)] font-bold' : 'text-[var(--color-foreground)] hover:bg-[var(--color-card-bg)]/80 hover:text-[var(--color-foreground)]'}`}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}
