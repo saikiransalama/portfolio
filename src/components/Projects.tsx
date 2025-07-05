@@ -126,8 +126,8 @@ const Projects = () => {
             {/* Removed image section for minimal design */}
             <div className="flex justify-end mb-2">
               <span className="bg-[var(--color-card-bg)] text-[var(--color-foreground)] px-2 py-1 rounded-full text-xs md:text-base font-semibold border border-[var(--color-border)]">
-                {project.category}
-              </span>
+                  {project.category}
+                </span>
             </div>
             <h4 className="font-bold text-[var(--color-foreground)] mb-2 line-clamp-2 text-lg md:text-xl">
               {project.title}
@@ -146,7 +146,7 @@ const Projects = () => {
                   <div className="text-xs text-gray-600 capitalize">{key}</div>
                 </div>
               ))}
-            </div>
+              </div>
             {/* Tech Stack */}
             <div className="mb-3">
               <h4 className="text-sm font-semibold text-gray-900 mb-2">Technologies Used</h4>

@@ -50,7 +50,7 @@ const About = () => {
           <p className="text-[var(--color-secondary)] leading-relaxed text-justify">
             I specialize in advanced analytics and machine learning, with published research on COVID-19 enrollment analysis. My experience at Amazon as a Flex Payment Investigator & SME has honed my analytical skills and business acumen.
           </p>
-        </div>
+              </div>
 
         {/* 2nd Card: What I Bring to the Table */}
         <div className="card bg-[var(--color-card-bg)] rounded-2xl shadow-sm flex flex-col h-full p-6">
@@ -86,14 +86,14 @@ const About = () => {
                 <div className="flex flex-wrap gap-2 ml-12">
                   {skill.items.map((item) => (
                     <span key={item} className="bg-black/10 text-[var(--color-foreground)] px-3 py-1 rounded-full text-sm font-medium">
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
         {/* 4th Card: My Core Values */}
         <div className="card bg-[var(--color-card-bg)] rounded-2xl shadow-sm flex flex-col h-full p-6">
@@ -101,18 +101,18 @@ const About = () => {
             My Core Values
           </h3>
           <div className="space-y-6">
-            {values.map((value, index) => (
+                {values.map((value, index) => (
               <div key={index} className="flex items-start mb-2">
                 <div className="p-2 bg-[var(--color-card-bg)] rounded-xl mr-4 flex-shrink-0 flex items-center justify-center" style={{ width: 40, height: 40 }}>
-                  <value.icon className="h-6 w-6 text-white" />
-                </div>
-                <div>
+                        <value.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <div>
                   <h4 className="text-lg font-bold text-[var(--color-foreground)] mb-1" style={{ fontFamily: 'Caudex, serif' }}>{value.title}</h4>
                   <p className="text-base text-[var(--color-secondary)] leading-relaxed">{value.description}</p>
-                </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>
