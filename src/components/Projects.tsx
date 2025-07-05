@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ExternalLink, Github, BarChart3, TrendingUp, Users, DollarSign, Calendar, ArrowRight, Play, Eye, Code, Database, Zap } from 'lucide-react';
 
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
   const [activeProject, setActiveProject] = useState(0);
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
@@ -78,146 +79,110 @@ const Projects = () => {
 
   const categories = ["All", "Research", "Machine Learning", "Data Analysis", "Statistical Analysis"];
 
+  // Filter projects based on activeCategory
+  const filteredProjects = activeCategory === 'All' ? projects : projects.filter(p => p.category === activeCategory);
+
+  // Ensure activeProject index is within filteredProjects
+  const safeActiveProject = Math.min(activeProject, filteredProjects.length - 1);
+
   return (
-    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
+    <div className="py-4 md:py-6 lg:py-8 px-2 sm:px-3 lg:px-4 bg-[var(--color-background)]">
       {/* Section Header */}
-      <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-[var(--color-foreground)]">
+      <div className="text-center mb-4 md:mb-5">
+        <h2 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2 text-[var(--color-foreground)]">
           Proof in the Projects
         </h2>
-        <p className="text-base md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm md:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
           See how I've turned complex data into real-world results—each project is a story of impact.
         </p>
       </div>
       {/* Category Filter */}
-      <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-6 md:mb-8">
+      <div className="flex flex-wrap justify-center gap-1.5 md:gap-3 mb-4 md:mb-6">
         {categories.map((category, index) => (
           <button
             key={index}
-            className={`px-4 md:px-6 py-2 md:py-3 rounded-2xl font-semibold transition-all duration-300 border-2 text-xs md:text-base ${index === 0 ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)]' : 'bg-transparent text-[var(--color-muted)] border-[var(--color-border)] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)]'}`}
-            style={{ minHeight: 44 }}
+            onClick={() => {
+              setActiveCategory(category);
+              setActiveProject(0); // Reset to first project in new category
+            }}
+            className={`px-3 md:px-4 py-1.5 md:py-2 rounded-2xl font-semibold transition-all duration-300 border-2 text-xs md:text-base ${activeCategory === category ? 'bg-[var(--color-card-bg)] text-black border-[var(--color-card-bg)]' : 'bg-white text-[var(--color-muted)] border-[var(--color-border)] hover:bg-[var(--color-card-bg)]/40 hover:text-black'}`}
+            style={{ minHeight: 36 }}
           >
             {category}
           </button>
         ))}
       </div>
-      {/* Featured Project Showcase */}
-      <div className="mb-6 md:mb-12">
-        <div className="card overflow-hidden">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-            {/* Project Image */}
-            <div className="relative h-48 md:h-96 lg:h-full overflow-hidden">
-              <img
-                src={projects[activeProject].image}
-                alt={projects[activeProject].title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-3 left-3 text-white">
-                <span className="bg-[var(--color-accent)] px-2 py-0.5 rounded-full text-xs font-semibold">
-                  {projects[activeProject].category}
-                </span>
-              </div>
-            </div>
-            {/* Project Details */}
-            <div className="p-4 md:p-8 lg:p-12">
-              <div className="flex items-center gap-4 mb-4">
-                <Calendar className="h-5 w-5 text-gray-500" />
-                <span className="text-gray-600">{projects[activeProject].duration}</span>
-                <Users className="h-5 w-5 text-gray-500" />
-                <span className="text-gray-600">{projects[activeProject].team}</span>
-              </div>
-
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                {projects[activeProject].title}
-              </h3>
-              
-              <p className="text-lg text-blue-600 font-semibold mb-6">
-                {projects[activeProject].subtitle}
-              </p>
-
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                {projects[activeProject].description}
-              </p>
-
-              {/* Impact Metrics */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                {Object.entries(projects[activeProject].impact).map(([key, value]) => (
-                  <div key={key} className="bg-gray-50 rounded-xl p-4 text-center">
-                    <div className="text-2xl font-bold text-green-600 mb-1">{value}</div>
-                    <div className="text-sm text-gray-600 capitalize">{key}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Tech Stack */}
-              <div className="mb-8">
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Technologies Used</h4>
-                <div className="flex flex-wrap gap-2">
-                  {projects[activeProject].tech.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex gap-4">
-                <button className="flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300">
-                  <Play className="h-4 w-4 mr-2" />
-                  View Case Study
-                </button>
-                <button className="flex items-center px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
-                  <Code className="h-4 w-4 mr-2" />
-                  View Code
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Project Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-        {projects.map((project, index) => (
+      {/* Uniform Project Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
+        {filteredProjects.map((project, index) => (
           <div
             key={project.id}
-            className={`card cursor-pointer transition-all duration-300 hover:shadow-xl p-3 md:p-4 ${activeProject === index ? 'border-[var(--color-accent)]' : 'hover:border-[var(--color-accent)]'}`}
+            className="card cursor-pointer transition-all duration-300 hover:shadow-xl p-4 md:p-6 hover:border-[var(--color-accent)] flex flex-col h-full"
             onClick={() => setActiveProject(index)}
             onMouseEnter={() => setHoveredProject(index)}
             onMouseLeave={() => setHoveredProject(null)}
-            style={{ minHeight: 44 }}
+            style={{ minHeight: 36 }}
           >
-            <div className="relative mb-2 md:mb-4">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-20 md:h-32 object-cover rounded-xl"
-              />
-              <div className="absolute top-1 right-1 md:top-2 md:right-2">
-                <span className="bg-[var(--color-accent)] text-white px-1.5 py-0.5 rounded-full text-[10px] md:text-xs font-semibold">
-                  {project.category}
-                </span>
-              </div>
+            {/* Removed image section for minimal design */}
+            <div className="flex justify-end mb-2">
+              <span className="bg-[var(--color-card-bg)] text-[var(--color-foreground)] px-2 py-1 rounded-full text-xs md:text-base font-semibold border border-[var(--color-border)]">
+                {project.category}
+              </span>
             </div>
-            <h4 className="font-bold text-[var(--color-foreground)] mb-1 md:mb-2 line-clamp-2 text-sm md:text-base">
+            <h4 className="font-bold text-[var(--color-foreground)] mb-2 line-clamp-2 text-lg md:text-xl">
               {project.title}
             </h4>
-            <p className="text-xs md:text-sm text-[var(--color-muted)] mb-2 md:mb-4 line-clamp-2">
+            <p className="text-sm md:text-base text-[var(--color-muted)] mb-2 line-clamp-2">
               {project.subtitle}
             </p>
-            <div className="flex items-center justify-between text-xs md:text-sm">
-              <div className="flex items-center text-[var(--color-muted)]">
-                <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-                {project.duration}
+            <p className="text-gray-600 mb-3 leading-relaxed text-sm md:text-base line-clamp-3">
+              {project.description}
+            </p>
+            {/* Impact Metrics */}
+            <div className="grid grid-cols-2 gap-2 mb-3">
+              {Object.entries(project.impact).map(([key, value]) => (
+                <div key={key} className="bg-gray-50 rounded-xl p-2 text-center">
+                  <div className="text-sm font-bold text-green-600 mb-1">{value}</div>
+                  <div className="text-xs text-gray-600 capitalize">{key}</div>
+                </div>
+              ))}
+            </div>
+            {/* Tech Stack */}
+            <div className="mb-3">
+              <h4 className="text-sm font-semibold text-gray-900 mb-2">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="px-3 py-1 bg-gray-100 text-black rounded-full text-xs font-medium border border-gray-200"
+                  >
+                    {tech}
+                  </span>
+                ))}
               </div>
-              <div className="flex items-center text-[var(--color-muted)]">
-                <Users className="h-3 w-3 md:h-4 md:w-4 mr-1" />
-                {project.team}
-              </div>
+            </div>
+            {/* Action Buttons */}
+            <div className="flex gap-2 mt-auto">
+              {project.title === "COVID-19 Enrollment Analysis" ? (
+                <a
+                  href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5222094"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
+                >
+                  <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Case Study
+                </a>
+              ) : (
+                <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
+                  <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Case Study
+                </button>
+              )}
+              <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
+                <Code className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                View Code
+              </button>
             </div>
           </div>
         ))}
