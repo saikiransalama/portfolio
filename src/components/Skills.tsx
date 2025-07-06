@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart3, Database, Code, Palette, Cloud, Zap, TrendingUp, Target, CheckCircle, Star, ArrowRight } from 'lucide-react';
+import pythonLogo from '../assests/python.svg';
+import reactLogo from '../assests/react.svg';
+import javascriptLogo from '../assests/javascript.svg';
+import mysqlLogo from '../assests/mysql.svg';
+import postgresqlLogo from '../assests/postgresql.svg';
+import mongodbLogo from '../assests/mongodb.svg';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
@@ -40,17 +46,14 @@ const Skills = () => {
 
   const skills = {
     programming: [
-      { name: 'Python', level: 95, experience: '3+ years', projects: 8, icon: '🐍' },
-      { name: 'SQL', level: 90, experience: '3+ years', projects: 6, icon: '🗄️' },
-      { name: 'R', level: 75, experience: '2+ years', projects: 4, icon: '📊' },
-      { name: 'JavaScript', level: 70, experience: '1+ year', projects: 3, icon: '⚡' }
+      { name: 'Python', level: 95, experience: '3+ years', projects: 8, icon: pythonLogo },
+      { name: 'React', level: 90, experience: '3 months', projects: 1, icon: reactLogo },
+      { name: 'JavaScript', level: 75, experience: '3 months', projects: 1, icon: javascriptLogo }
     ],
     databases: [
-      { name: 'PostgreSQL', level: 90, experience: '3+ years', projects: 10, icon: '🐘' },
-      { name: 'MySQL', level: 85, experience: '3+ years', projects: 8, icon: '🐬' },
-      { name: 'MongoDB', level: 78, experience: '2+ years', projects: 5, icon: '🍃' },
-      { name: 'Redis', level: 72, experience: '1+ year', projects: 4, icon: '🔴' },
-      { name: 'Snowflake', level: 80, experience: '2+ years', projects: 6, icon: '❄️' }
+      { name: 'PostgreSQL', level: 90, experience: '3+ years', projects: 10, icon: postgresqlLogo },
+      { name: 'MySQL', level: 85, experience: '3+ years', projects: 8, icon: mysqlLogo },
+      { name: 'MongoDB', level: 78, experience: '2+ years', projects: 5, icon: mongodbLogo }
     ],
     analytics: [
       { name: 'Statistical Analysis', level: 92, experience: '4+ years', projects: 20, icon: '📈' },
@@ -68,6 +71,7 @@ const Skills = () => {
     tools: [
       { name: 'Jupyter Notebook', level: 90, experience: '3+ years', projects: 8, icon: '📓' },
       { name: 'BigQuery', level: 85, experience: '2+ years', projects: 6, icon: '☁️' },
+      { name: 'Vite', level: 80, experience: '3 months', projects: 1, icon: '⚡' },
       { name: 'Linux (Ubuntu)', level: 80, experience: '2+ years', projects: 5, icon: '🐧' },
       { name: 'Git', level: 75, experience: '2+ years', projects: 4, icon: '📝' }
     ]
@@ -125,7 +129,11 @@ const Skills = () => {
                 <div key={skill.name} className="bg-[var(--color-card)] rounded-xl p-2">
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center">
-                      <span className="text-lg mr-2">{skill.icon}</span>
+                      {typeof skill.icon === 'string' && skill.icon.endsWith('.svg') ? (
+                        <img src={skill.icon} alt={`${skill.name} logo`} className="w-5 h-5 mr-2" />
+                      ) : (
+                        <span className="text-lg mr-2">{skill.icon}</span>
+                      )}
                       <div>
                         <h4 className="text-sm font-semibold text-[var(--color-foreground)]">{skill.name}</h4>
                         <div className="flex items-center gap-2 text-xs text-[var(--color-muted)]">
