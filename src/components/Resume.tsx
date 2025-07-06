@@ -94,37 +94,6 @@ const Resume = () => {
     }
   ];
 
-  const certifications = [
-    {
-      name: "Google Data Analytics Professional Certificate",
-      issuer: "Google",
-      date: "2023",
-      credential: "GOOG-DA-2023-001",
-      status: "Active"
-    },
-    {
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2023",
-      credential: "AWS-CCP-2023-456",
-      status: "Active"
-    },
-    {
-      name: "Tableau Desktop Specialist",
-      issuer: "Tableau",
-      date: "2022",
-      credential: "TAB-DS-2022-789",
-      status: "Active"
-    },
-    {
-      name: "Microsoft Excel Expert",
-      issuer: "Microsoft",
-      date: "2022",
-      credential: "MS-EXCEL-EXP-2022",
-      status: "Active"
-    }
-  ];
-
   return (
     <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
@@ -333,32 +302,71 @@ const Resume = () => {
         {activeTab === 'certifications' && (
           <div className="p-8">
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Professional Certifications</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {certifications.map((cert, index) => (
-                <div key={index} className="bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-colors">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-1">{cert.name}</h4>
-                      <div className="text-blue-600 font-semibold mb-2">{cert.issuer}</div>
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
-                        <span className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          {cert.date}
-                        </span>
-                        <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">
-                          {cert.status}
-                        </span>
-                      </div>
-                    </div>
-                    <div className="p-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl">
-                      <Award className="h-8 w-8 text-white" />
-                    </div>
+            <div className="grid md:grid-cols-3 gap-6 justify-center">
+              {/* Google Ads Display Certification Card */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
+                  <h4 className="text-xl font-bold mb-1" style={{ fontFamily: 'Caudex, serif', color: 'black' }}>
+                    Google Ads Display Certification
+                  </h4>
+                  <div className="text-base font-semibold mb-0.5" style={{ color: 'black' }}>Saikiran Reddy Salama</div>
+                  <div className="text-xs mb-0.5" style={{ color: 'black' }}>Has successfully completed and is certified in</div>
+                  <div className="text-sm font-medium mb-1" style={{ color: 'black' }}>Google Ads Display Certification</div>
+                  <div className="flex flex-col gap-0 text-xs mb-1" style={{ color: 'black' }}>
+                    <div><span className="font-semibold">Issue Date:</span> June 28, 2025</div>
+                    <div><span className="font-semibold">Expiry Date:</span> June 28, 2026</div>
+                    <div><span className="font-semibold">Certificate ID:</span> 153601841</div>
                   </div>
-                  <div className="text-xs text-gray-500 font-mono bg-white px-3 py-2 rounded-lg border">
-                    Credential ID: {cert.credential}
-                  </div>
+                  <a
+                    href="https://skillshop.credential.net/82d987ef-d160-471e-aa22-b920dc970609#acc.wbuj5KeR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
+                  >
+                    Verify
+                  </a>
                 </div>
-              ))}
+              </div>
+              {/* Google IT Support Certificate Card */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
+                  <h4 className="text-xl font-bold mb-1" style={{ fontFamily: 'Caudex, serif', color: 'black' }}>
+                    Google IT Support
+                  </h4>
+                  <div className="text-base font-semibold mb-0.5" style={{ color: 'black' }}>Saikiran Reddy Salama</div>
+                  <div className="text-xs mb-0.5" style={{ color: 'black' }}>Professional Certificate</div>
+                  <div className="text-xs mb-0.5" style={{ color: 'black' }}>Issued: Jun 29, 2025</div>
+                  <div className="text-xs mb-1" style={{ color: 'black' }}>Coursera / Google</div>
+                  <a
+                    href="https://coursera.org/verify/professional-cert/2B6BT01ZDV4K"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
+                  >
+                    Verify
+                  </a>
+                </div>
+              </div>
+              {/* Udemy Probability and Statistics Certificate Card */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
+                  <h4 className="text-xl font-bold mb-1" style={{ fontFamily: 'Caudex, serif', color: 'black' }}>
+                    Workshop in Probability and Statistics
+                  </h4>
+                  <div className="text-base font-semibold mb-0.5" style={{ color: 'black' }}>Saikiran Reddy Salama</div>
+                  <div className="text-xs mb-0.5" style={{ color: 'black' }}>Certificate of Completion</div>
+                  <div className="text-xs mb-0.5" style={{ color: 'black' }}>Issued: Jan 24, 2023</div>
+                  <div className="text-xs mb-1" style={{ color: 'black' }}>Udemy / George Ingersoll</div>
+                  <a
+                    href="https://www.udemy.com/certificate/UC-03d43da9-278d-4b53-b963-c08d975cc568/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
+                  >
+                    Verify
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}
