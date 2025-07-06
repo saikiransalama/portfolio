@@ -373,46 +373,10 @@ const Resume = () => {
       </div>
 
       {/* Download Resume */}
-      <div className="text-center mt-16">
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Get the full story—download my resume for a deep dive into my data-driven journey.
-          </h3>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="#"
-              className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              <Download className="h-5 w-5 mr-2" />
-              Download PDF Resume
-            </a>
-            <a
-              href="#contact"
-              className="flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
-            >
-              <ArrowRight className="h-5 w-5 mr-2" />
-              Let's Connect
-            </a>
-          </div>
-        </div>
-      </div>
+      {/* Removed download resume section */}
 
       {/* Call to Action */}
-      <div className="text-center mt-4 mb-4">
-        <h3 className="text-2xl font-bold text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
-          Let's put these skills to work—your next big win starts here.
-        </h3>
-        <p className="text-[var(--color-muted)] max-w-2xl mx-auto">
-          I'm always excited to take on new challenges and apply my technical expertise to solve complex business problems.
-        </p>
-        <a
-          href="#contact"
-          className="inline-flex items-center px-8 py-4 bg-[var(--color-accent)] text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 mt-2"
-        >
-          <ArrowRight className="h-5 w-5 mr-2" />
-          Let's Discuss Your Needs
-        </a>
-      </div>
+      {/* Removed call-to-action section */}
     </div>
   );
 };
