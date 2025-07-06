@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart3, Database, Code, Palette, Cloud, Zap, TrendingUp, Target, CheckCircle, Star, ArrowRight } from 'lucide-react';
-import pythonLogo from '../assests/python.svg';
-import reactLogo from '../assests/react.svg';
-import javascriptLogo from '../assests/javascript.svg';
-import mysqlLogo from '../assests/mysql.svg';
-import postgresqlLogo from '../assests/postgresql.svg';
-import mongodbLogo from '../assests/mongodb.svg';
+import pythonLogo from '../assests/python.svg?url';
+import reactLogo from '../assests/react.svg?url';
+import javascriptLogo from '../assests/javascript.svg?url';
+import mysqlLogo from '../assests/mysql.svg?url';
+import postgresqlLogo from '../assests/postgresql.svg?url';
+import mongodbLogo from '../assests/mongodb.svg?url';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
