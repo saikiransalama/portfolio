@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Briefcase, GraduationCap, Calendar, MapPin, Award, TrendingUp, Users, Target, Download, ArrowRight, Star, CheckCircle } from 'lucide-react';
+import UNTLogo from '../assests/Univerisity of North Texas.png';
+import OsmaniaLogo from '../assests/Osmania University.png';
 
 const Resume = () => {
   const [activeTab, setActiveTab] = useState('experience');
@@ -23,7 +25,7 @@ const Resume = () => {
       impact: {
         productivity: "+10%",
         training: "40 agents",
-        pass_rate: "100%"
+        "Pass Rate": "100%"
       }
     },
     {
@@ -163,7 +165,7 @@ const Resume = () => {
       <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden w-full max-w-full">
         {activeTab === 'experience' && (
           <div className="p-4 sm:p-6 md:p-8 overflow-x-auto">
-            <h3 className="text-2xl font-bold text-gray-100 mb-8">Professional Experience</h3>
+            <h3 className="text-2xl font-bold text-black mb-8">Professional Experience</h3>
             <div className="space-y-8">
               {experience.map((job, index) => (
                 <div key={job.id} className="flex items-start">
@@ -281,8 +283,12 @@ const Resume = () => {
                         </span>
                       </div>
                     </div>
-                    <div className="p-3 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl">
-                      <GraduationCap className="h-8 w-8 text-white" />
+                    <div className="p-3 rounded-xl flex items-center justify-center bg-white">
+                      {edu.school === 'University of North Texas' ? (
+                        <img src={UNTLogo} alt="UNT Logo" className="h-20 w-20 object-contain" />
+                      ) : edu.school === 'Osmania University' ? (
+                        <img src={OsmaniaLogo} alt="Osmania University Logo" className="h-20 w-20 object-contain" />
+                      ) : null}
                     </div>
                   </div>
 
