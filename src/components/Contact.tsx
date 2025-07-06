@@ -116,7 +116,7 @@ const Contact = () => {
           Ready to Collaborate?
         </h2>
         <p className="text-base md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
-          Let's team up to turn your data into your next big advantage. Reach out—let's make something amazing happen.
+          Let's team up to turn your data into your next big advantage. Reach out let's make something amazing happen.
         </p>
       </div>
 
@@ -353,35 +353,6 @@ const Contact = () => {
                 <span className="font-semibold">Twitter</span>
               </a>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="text-center mt-16">
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Transform Your Data?
-          </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Whether you need help with data analysis, want to discuss a project, or just want to connect, 
-            I'm here to help. Let's turn your data challenges into opportunities.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
-              href="mailto:alex.chen@email.com"
-              className="flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
-            >
-              <Mail className="h-5 w-5 mr-2" />
-              Send Email
-            </a>
-            <a
-              href="tel:+15551234567"
-              className="flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-2xl font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300"
-            >
-              <Phone className="h-5 w-5 mr-2" />
-              Call Now
-            </a>
           </div>
         </div>
       </div>
