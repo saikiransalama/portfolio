@@ -187,17 +187,17 @@ const Skills = () => {
         <h3 className="text-3xl md:text-4xl font-bold text-[var(--color-foreground)] mb-6 text-center" style={{ fontFamily: 'Caudex, serif' }}>
           Certifications & Achievements
         </h3>
-        <div className="grid md:grid-cols-2 gap-6 justify-center">
+        <div className="grid md:grid-cols-3 gap-6 justify-center">
           {/* Google Ads Display Certification Card */}
           <div className="flex justify-center">
             <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
-              <h4 className="text-xl font-bold text-gray-900 mb-1" style={{ fontFamily: 'Caudex, serif' }}>
+              <h4 className="text-xl font-bold mb-1" style={{ fontFamily: 'Caudex, serif', color: 'black' }}>
                 Google Ads Display Certification
               </h4>
-              <div className="text-base font-semibold text-gray-700 mb-0.5">Saikiran Reddy Salama</div>
-              <div className="text-xs text-gray-500 mb-0.5">Has successfully completed and is certified in</div>
-              <div className="text-sm font-medium text-gray-800 mb-1">Google Ads Display Certification</div>
-              <div className="flex flex-col gap-0 text-xs text-gray-500 mb-1">
+              <div className="text-base font-semibold mb-0.5" style={{ color: 'black' }}>Saikiran Reddy Salama</div>
+              <div className="text-xs mb-0.5" style={{ color: 'black' }}>Has successfully completed and is certified in</div>
+              <div className="text-sm font-medium mb-1" style={{ color: 'black' }}>Google Ads Display Certification</div>
+              <div className="flex flex-col gap-0 text-xs mb-1" style={{ color: 'black' }}>
                 <div><span className="font-semibold">Issue Date:</span> June 28, 2025</div>
                 <div><span className="font-semibold">Expiry Date:</span> June 28, 2026</div>
                 <div><span className="font-semibold">Certificate ID:</span> 153601841</div>
@@ -215,15 +215,35 @@ const Skills = () => {
           {/* Google IT Support Certificate Card */}
           <div className="flex justify-center">
             <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
-              <h4 className="text-xl font-bold text-gray-900 mb-1" style={{ fontFamily: 'Caudex, serif' }}>
+              <h4 className="text-xl font-bold mb-1" style={{ fontFamily: 'Caudex, serif', color: 'black' }}>
                 Google IT Support
               </h4>
-              <div className="text-base font-semibold text-gray-700 mb-0.5">Saikiran Reddy Salama</div>
-              <div className="text-xs text-gray-500 mb-0.5">Professional Certificate</div>
-              <div className="text-xs text-gray-500 mb-0.5">Issued: Jun 29, 2025</div>
-              <div className="text-xs text-gray-500 mb-1">Coursera / Google</div>
+              <div className="text-base font-semibold mb-0.5" style={{ color: 'black' }}>Saikiran Reddy Salama</div>
+              <div className="text-xs mb-0.5" style={{ color: 'black' }}>Professional Certificate</div>
+              <div className="text-xs mb-0.5" style={{ color: 'black' }}>Issued: Jun 29, 2025</div>
+              <div className="text-xs mb-1" style={{ color: 'black' }}>Coursera / Google</div>
               <a
                 href="https://coursera.org/verify/professional-cert/2B6BT01ZDV4K"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
+              >
+                Verify
+              </a>
+            </div>
+          </div>
+          {/* Udemy Probability and Statistics Certificate Card */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
+              <h4 className="text-xl font-bold mb-1" style={{ fontFamily: 'Caudex, serif', color: 'black' }}>
+                Workshop in Probability and Statistics
+              </h4>
+              <div className="text-base font-semibold mb-0.5" style={{ color: 'black' }}>Saikiran Reddy Salama</div>
+              <div className="text-xs mb-0.5" style={{ color: 'black' }}>Certificate of Completion</div>
+              <div className="text-xs mb-0.5" style={{ color: 'black' }}>Issued: Jan 24, 2023</div>
+              <div className="text-xs mb-1" style={{ color: 'black' }}>Udemy / George Ingersoll</div>
+              <a
+                href="https://www.udemy.com/certificate/UC-03d43da9-278d-4b53-b963-c08d975cc568/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
