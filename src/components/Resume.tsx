@@ -76,7 +76,7 @@ const Resume = () => {
       degree: "Bachelor of Science in Computer Science",
       school: "Osmania University",
       location: "Hyderabad, Telangana, India",
-      period: "2018 - 2022",
+      period: "2019 - 2022",
       gpa: "8.95/10",
       highlights: [
         "CGPA: 8.95/10",
