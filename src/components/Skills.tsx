@@ -11,10 +11,10 @@ import bigqueryLogo from '../assests/googlebigquery.png';
 import viteLogo from '../assests/vite.png';
 import linuxLogo from '../assests/linux.png';
 import gitLogo from '../assests/git.png';
-import powerbiLogo from '../assests/PowerBI.png';
-import tableauLogo from '../assests/Tableau.png';
-import msexcelLogo from '../assests/MSExcel.png';
-import matplotlibLogo from '../assests/Matplotlib.png';
+import powerbiLogo from '../assests/PowerBI.png?url';
+import tableauLogo from '../assests/Tableau.png?url';
+import msexcelLogo from '../assests/MSExcel.png?url';
+import matplotlibLogo from '../assests/Matplotlib.png?url';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
