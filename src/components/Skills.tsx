@@ -108,100 +108,57 @@ const Skills = () => {
           From code to cloud, I wield the tools that turn data into business breakthroughs.
         </p>
       </div>
-      {/* Skills Overview Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
-        {[
-          { number: "4", label: "Programming Languages", icon: Code },
-          { number: "8", label: "Academic Projects", icon: Target },
-          { number: "3+", label: "Years Experience", icon: TrendingUp },
-          { number: "3.9/4.0", label: "Master's CGPA", icon: Star }
-        ].map((stat, index) => (
-          <div key={index} className="card group p-4 md:p-6">
-            <div className="flex items-center justify-center mb-2 md:mb-4">
-              <div className="p-2 bg-[var(--color-surface)] rounded-xl group-hover:scale-110 transition-transform">
-                <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-black" />
-              </div>
+      {/* Compact grid for all skill categories */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        {skillCategories.map((category) => (
+          <div key={category.id} className="group bg-white rounded-2xl shadow-md border border-gray-100 p-4 flex flex-col h-full hover:scale-105 transition-transform duration-300">
+            <div className="mb-3">
+              <h3 className="text-xl font-bold text-gray-900 mb-2 text-center" style={{ fontFamily: 'Caudex, serif' }}>
+                {category.name}
+              </h3>
+              <p className="text-xs text-gray-600 mb-2 text-center">
+                {category.description}
+              </p>
             </div>
-            <div className="text-lg md:text-3xl font-bold text-black mb-1 md:mb-2">
-              {stat.number}
-            </div>
-            <div className="text-xs md:text-sm text-[var(--color-muted)] font-medium text-center">
-              {stat.label}
+            <div className="space-y-3">
+              {skills[category.id as keyof typeof skills]?.map((skill, index) => (
+                <div key={skill.name} className="bg-[var(--color-card)] rounded-xl p-2">
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-center">
+                      <span className="text-lg mr-2">{skill.icon}</span>
+                      <div>
+                        <h4 className="text-sm font-semibold text-[var(--color-foreground)]">{skill.name}</h4>
+                        <div className="flex items-center gap-2 text-xs text-[var(--color-muted)]">
+                          <span className="flex items-center">
+                            <CheckCircle className="h-3 w-3 mr-1 text-green-600" />
+                            {skill.experience}
+                          </span>
+                          <span className="flex items-center">
+                            <Target className="h-3 w-3 mr-1 text-[var(--color-accent)]" />
+                            {skill.projects} projects
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-sm font-bold text-[var(--color-foreground)]">{skill.level}%</div>
+                      <div className="text-xs text-[var(--color-muted)]">{getLevelText(skill.level)}</div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <div className="w-full bg-[var(--color-border)] rounded-full h-2 overflow-hidden">
+                      <div
+                        className={`h-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] w-full`}
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         ))}
       </div>
-
-      {/* Category Navigation */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12">
-        {skillCategories.map((category) => (
-          <button
-            key={category.id}
-            onClick={() => setActiveCategory(category.id)}
-            className={`flex items-center px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border-2 hover:scale-105 ${
-              activeCategory === category.id
-                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white border-blue-600'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-blue-300'
-            }`}
-          >
-            <category.icon className="h-5 w-5 mr-2" />
-            {category.name}
-          </button>
-        ))}
-      </div>
-
-      {/* Skills Display */}
-      <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
-        <div className="mb-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            {skillCategories.find(cat => cat.id === activeCategory)?.name}
-          </h3>
-          <p className="text-gray-600">
-            {skillCategories.find(cat => cat.id === activeCategory)?.description}
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          {skills[activeCategory as keyof typeof skills]?.map((skill, index) => (
-            <div key={skill.name} className="bg-[var(--color-card)] rounded-2xl p-6 hover:bg-[var(--color-background)]/60 transition-colors">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center">
-                  <span className="text-2xl mr-3">{skill.icon}</span>
-                  <div>
-                    <h4 className="text-lg font-semibold text-[var(--color-foreground)]">{skill.name}</h4>
-                    <div className="flex items-center gap-4 text-sm text-[var(--color-muted)]">
-                      <span className="flex items-center">
-                        <CheckCircle className="h-4 w-4 mr-1 text-green-600" />
-                        {skill.experience}
-                      </span>
-                      <span className="flex items-center">
-                        <Target className="h-4 w-4 mr-1 text-[var(--color-accent)]" />
-                        {skill.projects} projects
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-lg font-bold text-[var(--color-foreground)]">{skill.level}%</div>
-                  <div className="text-sm text-[var(--color-muted)]">{getLevelText(skill.level)}</div>
-                </div>
-              </div>
-              
-              <div className="relative">
-                <div className="w-full bg-[var(--color-border)] rounded-full h-3 overflow-hidden">
-                  <div
-                    className={`h-3 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] transition-all duration-1000 ease-out ${
-                      animatedSkills[activeCategory] ? 'w-full' : 'w-0'
-                    }`}
-                    style={{ width: animatedSkills[activeCategory] ? `${skill.level}%` : '0%' }}
-                  ></div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Certifications & Achievements */}
       <div className="mt-16 bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-3xl p-8">
         <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-6 text-center">
