@@ -138,7 +138,7 @@ const Skills = () => {
                 <div key={skill.name} className="bg-[var(--color-card)] rounded-xl p-2">
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center">
-                      {typeof skill.icon === 'string' && skill.icon.endsWith('.png') ? (
+                      {typeof skill.icon === 'string' && skill.icon.includes('.png') ? (
                         <img src={skill.icon} alt={`${skill.name} logo`} className="w-5 h-5 mr-2" />
                       ) : (
                         <span className="text-lg mr-2">{skill.icon}</span>
