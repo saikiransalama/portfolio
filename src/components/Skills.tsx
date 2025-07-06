@@ -11,6 +11,10 @@ import bigqueryLogo from '../assests/googlebigquery.png';
 import viteLogo from '../assests/vite.png';
 import linuxLogo from '../assests/linux.png';
 import gitLogo from '../assests/git.png';
+import powerbiLogo from '../assests/PowerBI.png';
+import tableauLogo from '../assests/Tableau.png';
+import msexcelLogo from '../assests/MSExcel.png';
+import matplotlibLogo from '../assests/Matplotlib.png';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
@@ -68,10 +72,10 @@ const Skills = () => {
       { name: 'Time Series Analysis', level: 82, experience: '2+ years', projects: 8, icon: '⏰' }
     ],
     visualization: [
-      { name: 'Power BI', level: 90, experience: '3+ years', projects: 8, icon: '💼' },
-      { name: 'Tableau', level: 85, experience: '2+ years', projects: 6, icon: '📊' },
-      { name: 'MS Excel', level: 95, experience: '3+ years', projects: 10, icon: '📋' },
-      { name: 'Matplotlib', level: 80, experience: '2+ years', projects: 5, icon: '📉' }
+      { name: 'Power BI', level: 90, experience: '3+ years', projects: 8, icon: powerbiLogo },
+      { name: 'Tableau', level: 85, experience: '2+ years', projects: 6, icon: tableauLogo },
+      { name: 'MS Excel', level: 95, experience: '3+ years', projects: 10, icon: msexcelLogo },
+      { name: 'Matplotlib', level: 80, experience: '2+ years', projects: 5, icon: matplotlibLogo }
     ],
     tools: [
       { name: 'Jupyter Notebook', level: 90, experience: '3+ years', projects: 8, icon: jupyterLogo },
