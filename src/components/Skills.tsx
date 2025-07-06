@@ -15,6 +15,11 @@ import powerbiLogo from '../assests/PowerBI.png?url';
 import tableauLogo from '../assests/Tableau.png?url';
 import msexcelLogo from '../assests/MSExcel.png?url';
 import matplotlibLogo from '../assests/Matplotlib.png?url';
+import statisticalAnalysisLogo from '../assests/Statistical Analysis.png?url';
+import machineLearningLogo from '../assests/Machine Learning.png?url';
+import predictiveModelingLogo from '../assests/Predictive Modeling.png?url';
+import timeSeriesLogo from '../assests/Time Series.png?url';
+import abTestingLogo from '../assests/AB Testing.png?url';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
@@ -65,11 +70,11 @@ const Skills = () => {
       { name: 'MongoDB', level: 78, experience: '2+ years', projects: 5, icon: mongodbLogo }
     ],
     analytics: [
-      { name: 'Statistical Analysis', level: 92, experience: '4+ years', projects: 20, icon: '📈' },
-      { name: 'Machine Learning', level: 85, experience: '3+ years', projects: 12, icon: '🤖' },
-      { name: 'Predictive Modeling', level: 88, experience: '3+ years', projects: 15, icon: '🔮' },
-      { name: 'A/B Testing', level: 90, experience: '3+ years', projects: 18, icon: '🧪' },
-      { name: 'Time Series Analysis', level: 82, experience: '2+ years', projects: 8, icon: '⏰' }
+      { name: 'Statistical Analysis', level: 92, experience: '4+ years', projects: 20, icon: statisticalAnalysisLogo },
+      { name: 'Machine Learning', level: 85, experience: '3+ years', projects: 12, icon: machineLearningLogo },
+      { name: 'Predictive Modeling', level: 88, experience: '3+ years', projects: 15, icon: predictiveModelingLogo },
+      { name: 'A/B Testing', level: 90, experience: '3+ years', projects: 18, icon: abTestingLogo },
+      { name: 'Time Series Analysis', level: 82, experience: '2+ years', projects: 8, icon: timeSeriesLogo }
     ],
     visualization: [
       { name: 'Power BI', level: 90, experience: '3+ years', projects: 8, icon: powerbiLogo },
