@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart3, Database, Code, Palette, Cloud, Zap, TrendingUp, Target, CheckCircle, Star, ArrowRight } from 'lucide-react';
-import pythonLogo from '../assests/python-logo.svg?url';
-import reactLogo from '../assests/react-logo.svg?url';
-import javascriptLogo from '../assests/javascript-logo.svg?url';
-import mysqlLogo from '../assests/mysql-logo.svg?url';
-import postgresqlLogo from '../assests/postgresql.svg?url';
-import mongodbLogo from '../assests/mongodb-logo.svg?url';
+import pythonLogo from '../assests/python.png';
+import reactLogo from '../assests/react.png';
+import javascriptLogo from '../assests/javascript.png';
+import mysqlLogo from '../assests/mysql.png';
+import postgresqlLogo from '../assests/postgresql.png';
+import mongodbLogo from '../assests/mongodb.png';
+import jupyterLogo from '../assests/jupyter.png';
+import bigqueryLogo from '../assests/googlebigquery.png';
+import viteLogo from '../assests/vite.png';
+import linuxLogo from '../assests/linux.png';
+import gitLogo from '../assests/git.png';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
@@ -69,11 +74,11 @@ const Skills = () => {
       { name: 'Matplotlib', level: 80, experience: '2+ years', projects: 5, icon: '📉' }
     ],
     tools: [
-      { name: 'Jupyter Notebook', level: 90, experience: '3+ years', projects: 8, icon: '📓' },
-      { name: 'BigQuery', level: 85, experience: '2+ years', projects: 6, icon: '☁️' },
-      { name: 'Vite', level: 80, experience: '3 months', projects: 1, icon: '⚡' },
-      { name: 'Linux (Ubuntu)', level: 80, experience: '2+ years', projects: 5, icon: '🐧' },
-      { name: 'Git', level: 75, experience: '2+ years', projects: 4, icon: '📝' }
+      { name: 'Jupyter Notebook', level: 90, experience: '3+ years', projects: 8, icon: jupyterLogo },
+      { name: 'BigQuery', level: 85, experience: '2+ years', projects: 6, icon: bigqueryLogo },
+      { name: 'Vite', level: 80, experience: '3 months', projects: 1, icon: viteLogo },
+      { name: 'Linux (Ubuntu)', level: 80, experience: '2+ years', projects: 5, icon: linuxLogo },
+      { name: 'Git', level: 75, experience: '2+ years', projects: 4, icon: gitLogo }
     ]
   };
 
@@ -129,7 +134,7 @@ const Skills = () => {
                 <div key={skill.name} className="bg-[var(--color-card)] rounded-xl p-2">
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center">
-                      {typeof skill.icon === 'string' && skill.icon.endsWith('.svg') ? (
+                      {typeof skill.icon === 'string' && skill.icon.endsWith('.png') ? (
                         <img src={skill.icon} alt={`${skill.name} logo`} className="w-5 h-5 mr-2" />
                       ) : (
                         <span className="text-lg mr-2">{skill.icon}</span>
