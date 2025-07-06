@@ -127,7 +127,7 @@ const Resume = () => {
     <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 bg-gradient-to-r from-primary to-muted bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
           Experience That Delivers Results
         </h2>
         <p className="text-base md:text-xl text-muted max-w-2xl mx-auto leading-relaxed">
@@ -135,28 +135,7 @@ const Resume = () => {
         </p>
       </div>
       {/* Quick Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-8">
-        {[
-          { number: "2+", label: "Years Experience", icon: Briefcase },
-          { number: "2", label: "Research Papers", icon: Users },
-          { number: "3.9/4.0", label: "Master's CGPA", icon: TrendingUp },
-          { number: "100%", label: "Training Pass Rate", icon: Star }
-        ].map((stat, index) => (
-          <div key={index} className="card group p-4 md:p-6">
-            <div className="flex items-center justify-center mb-2 md:mb-4">
-              <div className="p-2 bg-[var(--color-surface)] rounded-xl group-hover:scale-110 transition-transform">
-                <stat.icon className="h-6 w-6 md:h-8 md:w-8 text-black" />
-              </div>
-            </div>
-            <div className="text-lg md:text-3xl font-bold text-black mb-1 md:mb-2">
-              {stat.number}
-            </div>
-            <div className="text-xs md:text-sm text-[var(--color-muted)] font-medium text-center">
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Quick Stats */}
 
       {/* Tab Navigation */}
       <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -170,8 +149,8 @@ const Resume = () => {
             onClick={() => setActiveTab(tab.id)}
             className={`flex items-center px-6 py-3 rounded-2xl font-semibold transition-all duration-300 border-2 hover:scale-105 ${
               activeTab === tab.id
-                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white border-blue-600'
-                : 'bg-white text-gray-600 border-gray-200 hover:border-blue-300'
+                ? 'bg-[var(--color-card-bg)] text-black border-[var(--color-card-bg)]'
+                : 'bg-white text-gray-600 border-gray-200 hover:border-gray-400'
             }`}
           >
             <tab.icon className="h-5 w-5 mr-2" />
@@ -402,6 +381,23 @@ const Resume = () => {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Call to Action */}
+      <div className="text-center mt-4 mb-4">
+        <h3 className="text-2xl font-bold text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
+          Let's put these skills to work—your next big win starts here.
+        </h3>
+        <p className="text-[var(--color-muted)] max-w-2xl mx-auto">
+          I'm always excited to take on new challenges and apply my technical expertise to solve complex business problems.
+        </p>
+        <a
+          href="#contact"
+          className="inline-flex items-center px-8 py-4 bg-[var(--color-accent)] text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300 mt-2"
+        >
+          <ArrowRight className="h-5 w-5 mr-2" />
+          Let's Discuss Your Needs
+        </a>
       </div>
     </div>
   );

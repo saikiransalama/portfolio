@@ -117,7 +117,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="py-8 md:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
+    <div className="py-4 md:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 bg-[var(--color-background)]">
       {/* Section Header */}
       <div className="text-center mb-6 md:mb-8">
         <h2 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-[var(--color-foreground)]" style={{ fontFamily: 'Caudex, serif' }}>
@@ -183,7 +183,7 @@ const Skills = () => {
         ))}
       </div>
       {/* Certifications & Achievements */}
-      <div className="mt-8 bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-3xl p-8">
+      <div className="mt-4 bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-3xl p-6">
         <h3 className="text-3xl md:text-4xl font-bold text-[var(--color-foreground)] mb-6 text-center" style={{ fontFamily: 'Caudex, serif' }}>
           Certifications & Achievements
         </h3>
@@ -252,25 +252,6 @@ const Skills = () => {
               </a>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Call to Action */}
-      <div className="text-center mt-16">
-        <div className="card">
-          <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-4">
-            Let's put these skills to work—your next big win starts here.
-          </h3>
-          <p className="text-[var(--color-muted)] mb-6 max-w-2xl mx-auto">
-            I'm always excited to take on new challenges and apply my technical expertise to solve complex business problems.
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-[var(--color-accent)] text-white rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
-          >
-            <ArrowRight className="h-5 w-5 mr-2" />
-            Let's Discuss Your Needs
-          </a>
         </div>
       </div>
     </div>
