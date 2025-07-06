@@ -20,6 +20,7 @@ import machineLearningLogo from '../assests/Machine Learning.png?url';
 import predictiveModelingLogo from '../assests/Predictive Modeling.png?url';
 import timeSeriesLogo from '../assests/Time Series.png?url';
 import abTestingLogo from '../assests/AB Testing.png?url';
+import googleAdsLogo from '../assests/Google Display Ads .png';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('programming');
@@ -182,40 +183,55 @@ const Skills = () => {
         ))}
       </div>
       {/* Certifications & Achievements */}
-      <div className="mt-16 bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-3xl p-8">
-        <h3 className="text-2xl font-bold text-[var(--color-foreground)] mb-6 text-center">
+      <div className="mt-8 bg-gradient-to-r from-[var(--color-accent)]/10 to-[var(--color-accent2)]/10 rounded-3xl p-8">
+        <h3 className="text-3xl md:text-4xl font-bold text-[var(--color-foreground)] mb-6 text-center" style={{ fontFamily: 'Caudex, serif' }}>
           Certifications & Achievements
         </h3>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              title: "Google Data Analytics Professional Certificate",
-              issuer: "Google",
-              year: "2023",
-              icon: "📊"
-            },
-            {
-              title: "AWS Certified Cloud Practitioner",
-              issuer: "Amazon Web Services",
-              year: "2023",
-              icon: "☁️"
-            },
-            {
-              title: "Tableau Desktop Specialist",
-              issuer: "Tableau",
-              year: "2022",
-              icon: "📈"
-            }
-          ].map((cert, index) => (
-            <div key={index} className="card">
-              <div className="text-3xl mb-4">{cert.icon}</div>
-              <h4 className="font-semibold text-[var(--color-foreground)] mb-2">{cert.title}</h4>
-              <div className="text-sm text-[var(--color-muted)]">
-                <div>{cert.issuer}</div>
-                <div>{cert.year}</div>
+        <div className="grid md:grid-cols-2 gap-6 justify-center">
+          {/* Google Ads Display Certification Card */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
+              <h4 className="text-xl font-bold text-gray-900 mb-1" style={{ fontFamily: 'Caudex, serif' }}>
+                Google Ads Display Certification
+              </h4>
+              <div className="text-base font-semibold text-gray-700 mb-0.5">Saikiran Reddy Salama</div>
+              <div className="text-xs text-gray-500 mb-0.5">Has successfully completed and is certified in</div>
+              <div className="text-sm font-medium text-gray-800 mb-1">Google Ads Display Certification</div>
+              <div className="flex flex-col gap-0 text-xs text-gray-500 mb-1">
+                <div><span className="font-semibold">Issue Date:</span> June 28, 2025</div>
+                <div><span className="font-semibold">Expiry Date:</span> June 28, 2026</div>
+                <div><span className="font-semibold">Certificate ID:</span> 153601841</div>
               </div>
+              <a
+                href="https://skillshop.credential.net/82d987ef-d160-471e-aa22-b920dc970609#acc.wbuj5KeR"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
+              >
+                Verify
+              </a>
             </div>
-          ))}
+          </div>
+          {/* Google IT Support Certificate Card */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-xs bg-white rounded-2xl shadow-2xl p-2 flex flex-col items-center justify-center text-center transition-transform hover:scale-105 duration-300">
+              <h4 className="text-xl font-bold text-gray-900 mb-1" style={{ fontFamily: 'Caudex, serif' }}>
+                Google IT Support
+              </h4>
+              <div className="text-base font-semibold text-gray-700 mb-0.5">Saikiran Reddy Salama</div>
+              <div className="text-xs text-gray-500 mb-0.5">Professional Certificate</div>
+              <div className="text-xs text-gray-500 mb-0.5">Issued: Jun 29, 2025</div>
+              <div className="text-xs text-gray-500 mb-1">Coursera / Google</div>
+              <a
+                href="https://coursera.org/verify/professional-cert/2B6BT01ZDV4K"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block px-4 py-1 bg-blue-600 text-white font-bold rounded shadow hover:bg-blue-700 transition-colors duration-200 text-sm"
+              >
+                Verify
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
