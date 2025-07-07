@@ -127,7 +127,7 @@ const Contact = () => {
       title: "Download Resume",
       description: "Get my complete resume with detailed experience",
       icon: Send,
-      action: "#resume",
+      action: "/Saikiran_Data_Analyst_Resume.pdf",
       color: "from-orange-600 to-red-600"
     }
   ];
@@ -231,8 +231,8 @@ const Contact = () => {
                 <a
                   key={index}
                   href={action.action}
-                  target={action.action.startsWith('http') ? "_blank" : undefined}
-                  rel={action.action.startsWith('http') ? "noopener noreferrer" : undefined}
+                  target={action.action.startsWith('http') || action.action.endsWith('.pdf') ? "_blank" : undefined}
+                  rel={action.action.startsWith('http') || action.action.endsWith('.pdf') ? "noopener noreferrer" : undefined}
                   className="group flex items-center p-1 bg-[var(--color-card)] rounded-lg hover:bg-[var(--color-background)]/60 transition-all duration-300"
                 >
                   <div className={`p-1 bg-gray-300 rounded-lg mr-2 group-hover:scale-110 transition-transform`}>
