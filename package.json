@@ -12,6 +12,7 @@
   "dependencies": {
     "@fontsource/inter": "^5.2.6",
     "@fontsource/poppins": "^5.2.6",
+    "@vercel/analytics": "^1.5.0",
     "lucide-react": "^0.344.0",
     "nodemailer": "^7.0.5",
     "react": "^18.3.1",
