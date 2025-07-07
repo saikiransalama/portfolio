@@ -113,7 +113,7 @@ const Contact = () => {
       title: "Schedule a Call",
       description: "Book a 30-minute consultation to discuss your project",
       icon: Calendar,
-      action: "#",
+      action: "https://calendly.com/salamasaikiran/30min",
       color: "from-blue-600 to-purple-600"
     },
     {
@@ -231,6 +231,8 @@ const Contact = () => {
                 <a
                   key={index}
                   href={action.action}
+                  target={action.action.startsWith('http') ? "_blank" : undefined}
+                  rel={action.action.startsWith('http') ? "noopener noreferrer" : undefined}
                   className="group flex items-center p-1 bg-[var(--color-card)] rounded-lg hover:bg-[var(--color-background)]/60 transition-all duration-300"
                 >
                   <div className={`p-1 bg-gray-300 rounded-lg mr-2 group-hover:scale-110 transition-transform`}>
