@@ -39,8 +39,8 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="border-t border-[var(--color-divider)]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center px-4 sm:px-6 lg:px-8">
             <div className="flex items-center mb-4 md:mb-0">
               <span className="text-muted text-sm">
                 © 2025 Saikiran R. Salama. All rights reserved.
