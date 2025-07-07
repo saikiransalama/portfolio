@@ -17,14 +17,21 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
+      // If at the absolute bottom, set Contact as active and return
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1) {
+        setActiveSection('contact');
+        return;
+      }
       const sections = ['hero', 'about', 'projects', 'skills', 'resume', 'contact'];
       const scrollY = window.scrollY;
+      let found = false;
       sections.forEach((section) => {
         const element = document.getElementById(section);
         if (element) {
           const { offsetTop, offsetHeight } = element;
           if (scrollY >= offsetTop - 100 && scrollY < offsetTop + offsetHeight - 100) {
             setActiveSection(section);
+            found = true;
           }
         }
       });
