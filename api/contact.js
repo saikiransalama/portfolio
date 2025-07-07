@@ -10,7 +10,21 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, company, subject, message, honey } = req.body;
+  // Manually parse JSON body if not already parsed
+  let body = req.body;
+  if (!body || typeof body !== 'object') {
+    try {
+      const buffers = [];
+      for await (const chunk of req) {
+        buffers.push(chunk);
+      }
+      const rawBody = Buffer.concat(buffers).toString();
+      body = JSON.parse(rawBody);
+    } catch {
+      body = {};
+    }
+  }
+  const { name, email, company, subject, message, honey } = body;
 
   // Honeypot spam protection
   if (honey) {
