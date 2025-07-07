@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, MessageSquare, Calendar, Clock, CheckCircle, ArrowRight, Linkedin, Github } from 'lucide-react';
 import XLogo from '../assests/x.png';
-import LinkedInLogo from '../assests/linkedin.png';
+import LinkedInLogo from '../assests/LinkedIn.png';
 import GmailLogo from '../assests/gmail.png';
 
 const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
