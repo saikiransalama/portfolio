@@ -31,24 +31,39 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
+
+    // Prepare the payload, including the honeypot field
+    const payload = {
+      ...formData,
+      honey: '' // If you add a real honeypot field, use formData.honey
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
-    }, 3000);
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        const data = await res.json();
+        alert(data.error || 'Something went wrong.');
+      }
+    } catch (err) {
+      alert('Network error.');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitted(false), 3000);
+    }
   };
 
   const contactInfo = [
