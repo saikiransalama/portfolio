@@ -43,11 +43,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center mb-4 md:mb-0">
               <span className="text-muted text-sm">
-                © {currentYear} Saikiran Salama. All rights reserved.
-              </span>
-              <span className="mx-2 text-muted">•</span>
-              <span className="text-muted text-sm flex items-center">
-                Made with <Heart className="h-4 w-4 mx-1 text-accent2" /> in Hyderabad, India
+                © 2025 Saikiran R. Salama. All rights reserved.
               </span>
             </div>
             
