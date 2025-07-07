@@ -290,6 +290,8 @@ const Contact = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-center">
+                {/* Honeypot field for spam protection */}
+                <input type="text" name="honey" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
                 <div className="grid grid-cols-1 gap-2">
                   <div>
                     <label htmlFor="name" className="block text-xs font-semibold text-gray-700 mb-1">
