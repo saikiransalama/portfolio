@@ -166,7 +166,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-4 px-2 bg-[var(--color-background)]">
+    <div id="contact" className="py-4 px-2 bg-[var(--color-background)] pb-24">
       {/* Section Header */}
       <div className="text-center mb-2">
         <h2 className="text-2xl md:text-4xl font-bold mb-1 text-black" style={{ fontFamily: 'Caudex, serif' }}>
