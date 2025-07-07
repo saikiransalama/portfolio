@@ -135,6 +135,7 @@ const Hero = () => {
               className="p-3 md:p-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
+              title="GitHub Profile"
             >
               <Github className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
             </a>
@@ -143,14 +144,19 @@ const Hero = () => {
               className="p-3 md:p-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
               target="_blank"
               rel="noopener noreferrer"
+              title="LinkedIn Profile"
             >
               <Linkedin className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
             </a>
             <a 
-              href="#resume" 
-              className="p-3 md:p-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px] min-w-[44px]"
+              href="/Saikiran_Data_Analyst_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center px-4 py-3 md:px-6 md:py-4 bg-[var(--color-card-bg)] rounded-2xl shadow-sm hover:shadow-md hover:bg-[var(--color-accent)] transition-all duration-300 group min-h-[44px]"
+              title="Download Resume"
             >
-              <Download className="h-6 w-6 text-[var(--color-foreground)] group-hover:text-white transition-colors" />
+              <Download className="h-5 w-5 text-[var(--color-foreground)] group-hover:text-white transition-colors mr-2" />
+              <span className="text-sm font-semibold text-[var(--color-foreground)] group-hover:text-white transition-colors">Resume</span>
             </a>
           </div>
         </div>
