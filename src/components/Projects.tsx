@@ -175,7 +175,7 @@ const Projects = () => {
                 </a>
               ) : project.title === "Chicago Crime Prediction Model" ? (
                 <a
-                  href="https://github.com/saikiransalama/covid19-research-capstone"
+                  href="https://github.com/saikiransalama/chicago-crime-prediction"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
@@ -191,7 +191,7 @@ const Projects = () => {
               )}
               {project.title === "Chicago Crime Prediction Model" ? (
                 <a
-                  href="https://github.com/saikiransalama/covid19-research-capstone"
+                  href="https://github.com/saikiransalama/chicago-crime-prediction"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
