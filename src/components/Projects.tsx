@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, BarChart3, TrendingUp, Users, DollarSign, Calendar, ArrowRight, Play, Eye, Code, Database, Zap } from 'lucide-react';
+import IndividualIcon from '../assests/Individual.png';
+import GroupIcon from '../assests/Group.png';
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -74,10 +76,27 @@ const Projects = () => {
       category: "Statistical Analysis",
       duration: "2 months",
       team: "3 students"
+    },
+    {
+      id: 5,
+      title: "Data Analyst Portfolio Website",
+      subtitle: "Full-stack portfolio built in 1 week",
+      description: "Designed and developed a comprehensive, responsive portfolio website showcasing data analytics projects, skills, and professional experience. Built with React, TypeScript, and Tailwind CSS, featuring a full-stack contact system.",
+      impact: {
+        performance: "95+",
+        SEO: "85",
+        features: "Full-Stack",
+        deployment: "Vercel"
+      },
+      tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Node.js"],
+      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
+      category: "Web Development",
+      duration: "1 week",
+      team: "Individual"
     }
   ];
 
-  const categories = ["All", "Research", "Machine Learning", "Data Analysis", "Statistical Analysis"];
+  const categories = ["All", "Research", "Machine Learning", "Data Analysis", "Statistical Analysis", "Web Development"];
 
   // Filter projects based on activeCategory
   const filteredProjects = activeCategory === 'All' ? projects : projects.filter(p => p.category === activeCategory);
@@ -124,7 +143,23 @@ const Projects = () => {
             style={{ minHeight: 36 }}
           >
             {/* Removed image section for minimal design */}
-            <div className="flex justify-end mb-2">
+            <div className="flex justify-between items-start mb-2">
+              <span className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold border bg-gray-400 text-black border-gray-600" ${
+                project.team === "Individual" ? '' : 'hidden'
+              }`}>
+                {project.team === "Individual" && (
+                  <img src={IndividualIcon} alt="Individual" className="w-4 h-4 mr-1" />
+                )}
+                {project.team === "Individual" ? "Individual" : null}
+              </span>
+              <span className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs font-semibold border bg-gray-400 text-black border-gray-600 ${
+                project.team !== "Individual" ? '' : 'hidden'
+              }`}>
+                {project.team !== "Individual" && (
+                  <img src={GroupIcon} alt="Group" className="w-4 h-4 mr-1" />
+                )}
+                {project.team !== "Individual" ? project.team.replace(/students?/i, 'Students') : null}
+              </span>
               <span className="bg-[var(--color-card-bg)] text-[var(--color-foreground)] px-2 py-1 rounded-full text-xs md:text-base font-semibold border border-[var(--color-border)]">
                   {project.category}
                 </span>
@@ -183,6 +218,16 @@ const Projects = () => {
                   <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
                   View Case Study
                 </a>
+              ) : project.title === "Data Analyst Portfolio Website" ? (
+                <a
+                  href="https://saikiransalama.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
+                >
+                  <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Live Site
+                </a>
               ) : (
                 <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
                   <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
@@ -202,6 +247,16 @@ const Projects = () => {
               ) : project.title === "Chicago Crime Prediction Model" ? (
                 <a
                   href="https://github.com/saikiransalama/chicago-crime-prediction"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
+                >
+                  <Code className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
+                  View Code
+                </a>
+              ) : project.title === "Data Analyst Portfolio Website" ? (
+                <a
+                  href="https://github.com/saikiransalama/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
