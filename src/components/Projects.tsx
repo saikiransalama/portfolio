@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, BarChart3, TrendingUp, Users, DollarSign, Calendar, ArrowRight, Play, Eye, Code, Database, Zap } from 'lucide-react';
+import { Play, Code } from 'lucide-react';
 import IndividualIcon from '../assests/Individual.png';
 import GroupIcon from '../assests/Group.png';
 
 const Projects = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [activeProject, setActiveProject] = useState(0);
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects = [
     {
@@ -77,32 +76,13 @@ const Projects = () => {
       duration: "2 months",
       team: "3 students"
     },
-    {
-      id: 5,
-      title: "Data Analyst Portfolio Website",
-      subtitle: "Full-stack portfolio built in 1 week",
-      description: "Designed and developed a comprehensive, responsive portfolio website showcasing data analytics projects, skills, and professional experience. Built with React, TypeScript, and Tailwind CSS, featuring a full-stack contact system.",
-      impact: {
-        performance: "95+",
-        SEO: "85",
-        features: "Full-Stack",
-        deployment: "Vercel"
-      },
-      tech: ["React", "TypeScript", "Tailwind CSS", "Vite", "Node.js"],
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop",
-      category: "Web Development",
-      duration: "1 week",
-      team: "Individual"
-    }
   ];
 
-  const categories = ["All", "Research", "Machine Learning", "Data Analysis", "Statistical Analysis", "Web Development"];
+  const categories = ["All", "Research", "Machine Learning", "Data Analysis", "Statistical Analysis"];
 
   // Filter projects based on activeCategory
   const filteredProjects = activeCategory === 'All' ? projects : projects.filter(p => p.category === activeCategory);
 
-  // Ensure activeProject index is within filteredProjects
-  const safeActiveProject = Math.min(activeProject, filteredProjects.length - 1);
 
   return (
     <div className="py-4 md:py-6 lg:py-8 px-2 sm:px-3 lg:px-4 bg-[var(--color-background)]">
@@ -138,8 +118,6 @@ const Projects = () => {
             key={project.id}
             className="card cursor-pointer transition-all duration-300 hover:shadow-xl p-4 md:p-6 hover:border-[var(--color-accent)] flex flex-col h-full"
             onClick={() => setActiveProject(index)}
-            onMouseEnter={() => setHoveredProject(index)}
-            onMouseLeave={() => setHoveredProject(null)}
             style={{ minHeight: 36 }}
           >
             {/* Removed image section for minimal design */}
@@ -218,16 +196,6 @@ const Projects = () => {
                   <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
                   View Case Study
                 </a>
-              ) : project.title === "Data Analyst Portfolio Website" ? (
-                <a
-                  href="https://saikiransalama.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
-                >
-                  <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
-                  View Live Site
-                </a>
               ) : (
                 <button className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]">
                   <Play className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
@@ -247,16 +215,6 @@ const Projects = () => {
               ) : project.title === "Chicago Crime Prediction Model" ? (
                 <a
                   href="https://github.com/saikiransalama/chicago-crime-prediction"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
-                >
-                  <Code className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform text-[var(--color-button-primary-text)]" />
-                  View Code
-                </a>
-              ) : project.title === "Data Analyst Portfolio Website" ? (
-                <a
-                  href="https://github.com/saikiransalama/portfolio"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group bg-[var(--color-button-primary-fill)] text-[var(--color-button-primary-text)] px-5 py-2.5 rounded-2xl font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 flex items-center text-base min-h-[40px] border-2 border-[var(--color-button-primary-border)] hover:bg-[var(--color-button-primary-hover-fill)] hover:text-[var(--color-button-primary-hover-text)]"
