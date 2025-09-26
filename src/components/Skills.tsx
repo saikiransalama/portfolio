@@ -103,10 +103,10 @@ const Skills = () => {
   }, [activeCategory]);
 
   const getLevelColor = (level: number) => {
-    if (level >= 90) return 'from-green-500 to-green-600';
-    if (level >= 80) return 'from-blue-500 to-blue-600';
-    if (level >= 70) return 'from-yellow-500 to-yellow-600';
-    return 'from-gray-400 to-gray-500';
+    if (level >= 90) return 'bg-green-600 text-white';
+    if (level >= 80) return 'bg-blue-600 text-white';
+    if (level >= 70) return 'bg-yellow-600 text-black';
+    return 'bg-gray-500 text-white';
   };
 
   const getLevelText = (level: number) => {
@@ -114,6 +114,13 @@ const Skills = () => {
     if (level >= 80) return 'Advanced';
     if (level >= 70) return 'Intermediate';
     return 'Beginner';
+  };
+
+  const getLevelRank = (level: number) => {
+    if (level >= 90) return 4;
+    if (level >= 80) return 3;
+    if (level >= 70) return 2;
+    return 1;
   };
 
   return (
@@ -164,17 +171,18 @@ const Skills = () => {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm font-bold text-[var(--color-foreground)]">{skill.level}%</div>
-                      <div className="text-xs text-[var(--color-muted)]">{getLevelText(skill.level)}</div>
+                      <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-semibold ${getLevelColor(skill.level)}`}>
+                        {getLevelText(skill.level)}
+                      </span>
                     </div>
                   </div>
-                  <div className="relative">
-                    <div className="w-full bg-[var(--color-border)] rounded-full h-2 overflow-hidden">
-                      <div
-                        className={`h-2 rounded-full bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent2)] w-full`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                  <div className="mt-2 flex items-center gap-1" aria-label="Proficiency indicator">
+                    {[1,2,3,4].map((i) => (
+                      <span
+                        key={i}
+                        className={`h-2.5 w-6 rounded-full ${i <= getLevelRank(skill.level) ? 'bg-[var(--color-accent)]' : 'bg-[var(--color-border)]'}`}
+                      />
+                    ))}
                   </div>
                 </div>
               ))}
